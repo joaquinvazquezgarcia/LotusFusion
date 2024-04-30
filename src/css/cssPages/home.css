@@ -1,0 +1,742 @@
+.homeBanner {
+    display: flex;
+    padding-left: 16rem;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(
+        to right top,
+        #363636,
+        #141414 40%,
+        #141414 45%,
+        #000
+    );
+}
+
+.homeBannerTextContainer {
+    width: 30%;
+    position: relative;
+    z-index: 2;
+}
+
+.homeBannerImgContainer {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    right: 0;
+}
+
+.homeBannerImg {
+    height: 125%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    position: absolute;
+    right: -25%;
+    top: -10%;
+}
+
+.homeBannerImgOverlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #00000000 45%,
+        #00000047 75%,
+        #000000dd
+    );
+}
+
+.homeBannerTextContainer {
+    margin: auto 0 auto;
+}
+
+.homeBannerTitle {
+    color: #fdc500;
+    font-size: 3.5rem;
+    margin-top: 7rem;
+}
+
+.homeBannerSubtitle {
+    color: #fff;
+    margin: 1.5rem 0;
+    font-size: 3rem;
+}
+
+.homeBannerParagraph {
+    color: #fff;
+    margin-bottom: 3rem;
+}
+
+.homeMainBtn {
+    border: none;
+    text-decoration: none;
+    background-color: #fdc500;
+    border-radius: 50px;
+    color: #000;
+    padding: 1.4em 5em;
+    font-size: 1rem;
+    font-weight: 500;
+}
+/* ---------------------- */
+.homeInfo {
+    display: flex;
+    background-color: #fdf9f3;
+    padding: 10rem 0;
+}
+
+.homeInfoImgContainer {
+    width: 55%;
+    display: grid;
+    place-items: center;
+}
+
+.homeInfoImg {
+    width: 75%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+.homeInfoTextContainer {
+    width: 45%;
+    padding-right: 10%;
+}
+
+.homeMainHeader {
+    font-size: 1rem;
+}
+
+.homeMainTitle {
+    font-size: 3rem;
+    margin: 1rem 0 1.5rem;
+}
+
+/* ---------------------- */
+
+.homeMenu {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+    padding-top: 10rem;
+}
+
+.homeMenuCardContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.homeMenuCardContainer.seeMore {
+    height: 0;
+    overflow-y: hidden;
+}
+.homeMenuCardContainer.seeMore.active {
+    margin-bottom: 10rem;
+    height: initial;
+    overflow-y: initial;
+}
+
+/* ------------------------ */
+.menuCard {
+    flex-grow: 1;
+    min-width: 300px;
+    max-width: 33%;
+    text-decoration: none;
+    margin-bottom: 1rem;
+}
+
+.menuCard figure {
+    margin-bottom: 0rem;
+}
+
+.menuCardLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menuCardImg {
+    width: 100%;
+}
+
+.menuCardTitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #212121;
+}
+
+.menuCardDescription {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.menuCardBtn {
+    font-weight: 500;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    padding: 0%;
+    border-bottom: 2px solid #fdc500;
+}
+
+.menuCardBtn:hover {
+    color: #fdc500;
+}
+
+.homeMainBtn.seeMoreMenuBtn {
+    margin: 6rem auto;
+}
+.homeMainBtn.seeMoreMenuBtn.active {
+    display: none;
+}
+
+/* ------------------------- */
+
+@media all and (max-width: 318px) {
+    .homeBanner {
+        padding: 0 0.5rem;
+        flex-direction: column;
+        background: linear-gradient(
+            to top,
+            #363636,
+            #141414 30%,
+            #141414 45%,
+            #000
+        );
+    }
+
+    .homeBannerTextContainer {
+        width: 100%;
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .homeBannerImgContainer {
+        height: auto;
+        aspect-ratio: 1 / 1;
+        width: 100%;
+    }
+
+    .homeBannerImgOverlay {
+        display: none;
+    }
+
+    .homeBannerImg {
+        height: 180%;
+        right: -40%;
+        bottom: auto;
+        top: 250%;
+        opacity: 0.3;
+    }
+
+    .homeBannerTitle {
+        font-size: 2rem;
+    }
+
+    .homeBannerSubtitle {
+        font-size: 1.5rem;
+    }
+    /* ---------------------- */
+    .homeInfo {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 7rem 0;
+        overflow-y: hidden;
+    }
+
+    .homeInfoImgContainer {
+        width: 100%;
+        aspect-ratio: 6 / 1;
+        margin: auto;
+        position: relative;
+    }
+
+    .homeInfoImg {
+        position: absolute;
+        bottom: -550%;
+        width: 100%;
+    }
+
+    .homeInfoTextContainer {
+        width: 90%;
+        padding-right: 0%;
+        margin: auto;
+        margin-bottom: 3rem;
+    }
+
+    .homeMainTitle {
+        font-size: 1.7rem;
+    }
+    /* ---------------------- */
+
+    .homeMenu {
+        width: 90%;
+        margin: 0 0.5rem;
+        padding-top: 7rem;
+    }
+
+    /* ------------------------ */
+    .menuCard {
+        flex-grow: 1;
+        min-width: 220px;
+        text-align: center;
+        max-width: 100%;
+        margin-bottom: 2.5rem;
+    }
+
+    .menuCardTitle {
+        text-align: start;
+        font-size: 1.2rem;
+    }
+    .menuCardDescription {
+        text-align: start;
+    }
+
+    .homeMainBtn.seeMoreMenuBtn {
+        margin: 2rem auto;
+        padding: 1.5rem 2rem;
+    }
+}
+
+@media all and (min-width: 318px) and (max-width: 374px) {
+    .homeBanner {
+        padding: 0 1rem;
+        flex-direction: column;
+        background: linear-gradient(
+            to top,
+            #363636,
+            #141414 30%,
+            #141414 45%,
+            #000
+        );
+    }
+
+    .homeBannerTextContainer {
+        width: 100%;
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .homeBannerImgContainer {
+        height: auto;
+        aspect-ratio: 1 / 1;
+        width: 100%;
+    }
+
+    .homeBannerImgOverlay {
+        display: none;
+    }
+
+    .homeBannerImg {
+        height: 180%;
+        right: -40%;
+        bottom: auto;
+        top: 200%;
+        opacity: 0.3;
+    }
+
+    .homeBannerTitle {
+        font-size: 2rem;
+    }
+
+    .homeBannerSubtitle {
+        font-size: 1.5rem;
+    }
+    /* ---------------------- */
+    .homeInfo {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 7rem 0;
+        overflow-y: hidden;
+    }
+
+    .homeInfoImgContainer {
+        width: 100%;
+        aspect-ratio: 6 / 1;
+        margin: auto;
+        position: relative;
+    }
+
+    .homeInfoImg {
+        position: absolute;
+        bottom: -500%;
+        width: 100%;
+    }
+
+    .homeInfoTextContainer {
+        width: 80%;
+        padding-right: 0%;
+        margin: auto;
+        margin-bottom: 3rem;
+    }
+
+    .homeMainTitle {
+        font-size: 1.8rem;
+    }
+    /* ---------------------- */
+
+    .homeMenu {
+        width: 80%;
+        padding-top: 7rem;
+    }
+
+    /* ------------------------ */
+    .menuCard {
+        flex-grow: 1;
+        min-width: 240px;
+        text-align: center;
+        max-width: 100%;
+        margin-bottom: 2.5rem;
+    }
+
+    .menuCardTitle {
+        text-align: start;
+        font-size: 1.2rem;
+    }
+    .menuCardDescription {
+        text-align: start;
+    }
+
+    .homeMainBtn.seeMoreMenuBtn {
+        margin: 2rem auto;
+        padding: 1.5rem 2rem;
+    }
+}
+
+@media all and (min-width: 374px) and (max-width: 540px) {
+    .homeBanner {
+        padding: 0 3rem;
+        flex-direction: column;
+        background: linear-gradient(
+            to top,
+            #363636,
+            #141414 30%,
+            #141414 45%,
+            #000
+        );
+    }
+
+    .homeBannerTextContainer {
+        width: 100%;
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .homeBannerImgContainer {
+        height: auto;
+        aspect-ratio: 1 / 1;
+        width: 100%;
+    }
+
+    .homeBannerImgOverlay {
+        display: none;
+    }
+
+    .homeBannerImg {
+        height: 150%;
+        right: -25%;
+        bottom: auto;
+        top: 150%;
+        opacity: 0.3;
+    }
+
+    .homeBannerTitle {
+        font-size: 2rem;
+    }
+
+    .homeBannerSubtitle {
+        font-size: 1.5rem;
+    }
+
+    /* ---------------------- */
+    .homeInfo {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 7rem 0;
+        overflow-y: hidden;
+    }
+
+    .homeInfoImgContainer {
+        width: 100%;
+        aspect-ratio: 3 / 1;
+        margin: auto;
+        position: relative;
+    }
+
+    .homeInfoImg {
+        position: absolute;
+        bottom: -200%;
+        width: 100%;
+    }
+
+    .homeInfoTextContainer {
+        width: 80%;
+        padding-right: 0%;
+        margin: auto;
+        margin-bottom: 3rem;
+    }
+
+    .homeMainTitle {
+        font-size: 2rem;
+    }
+    /* ---------------------- */
+
+    .homeMenu {
+        width: 80%;
+        padding-top: 7rem;
+    }
+
+    /* ------------------------ */
+    .menuCard {
+        flex-grow: 1;
+        min-width: 240px;
+        text-align: center;
+        max-width: 100%;
+        margin-bottom: 2.5rem;
+    }
+
+    .menuCardTitle {
+        text-align: start;
+        font-size: 1.2rem;
+    }
+    .menuCardDescription {
+        text-align: start;
+    }
+
+    .homeMainBtn.seeMoreMenuBtn {
+        margin: 2rem auto;
+        padding: 1.5rem 2rem;
+    }
+}
+
+@media all and (min-width: 540px) and (max-width: 768px) {
+    .homeBanner {
+        padding: 0 3rem;
+        flex-direction: column;
+        background: linear-gradient(
+            to top,
+            #363636,
+            #141414 30%,
+            #141414 45%,
+            #000
+        );
+    }
+
+    .homeBannerTextContainer {
+        width: 100%;
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .homeBannerImgContainer {
+        height: auto;
+        aspect-ratio: 1 / 1;
+        width: 100%;
+    }
+    .homeBannerImgOverlay {
+        display: none;
+    }
+
+    .homeBannerImg {
+        height: 125%;
+        right: -12%;
+        bottom: -125%;
+        top: auto;
+        opacity: 0.3;
+    }
+
+    .homeBannerTitle {
+        font-size: 2.5rem;
+    }
+
+    .homeBannerSubtitle {
+        font-size: 2rem;
+    }
+
+    /* ---------------------- */
+    .homeInfo {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 7rem 0;
+        overflow-y: hidden;
+    }
+
+    .homeInfoImgContainer {
+        width: 100%;
+        aspect-ratio: 2.4 / 1;
+        margin: auto;
+        position: relative;
+    }
+
+    .homeInfoImg {
+        position: absolute;
+        bottom: -150%;
+        width: 100%;
+    }
+
+    .homeInfoTextContainer {
+        width: 80%;
+        padding-right: 0%;
+        margin: auto;
+        margin-bottom: 3rem;
+    }
+
+    .homeMainTitle {
+        font-size: 2.5rem;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 992px) {
+    .homeBanner {
+        padding: 0 3rem;
+        flex-direction: column;
+        background: linear-gradient(
+            to top,
+            #363636,
+            #141414 30%,
+            #141414 45%,
+            #000
+        );
+    }
+
+    .homeBannerTextContainer {
+        width: 100%;
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .homeBannerImgContainer {
+        height: auto;
+        aspect-ratio: 1 / 1;
+        width: 100%;
+    }
+    .homeBannerImgOverlay {
+        display: none;
+    }
+
+    .homeBannerImg {
+        height: 125%;
+        right: -12%;
+        bottom: -80%;
+        top: auto;
+        opacity: 0.3;
+    }
+
+    .homeBannerTitle {
+        font-size: 2.5rem;
+    }
+
+    .homeBannerSubtitle {
+        font-size: 2rem;
+    }
+
+    /* ---------------------- */
+    .homeInfo {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 7rem 0;
+        overflow-y: hidden;
+    }
+
+    .homeInfoImgContainer {
+        width: 100%;
+        aspect-ratio: 2.4 / 1;
+        margin: auto;
+        position: relative;
+    }
+
+    .homeInfoImg {
+        position: absolute;
+        bottom: -150%;
+        width: 100%;
+    }
+
+    .homeInfoTextContainer {
+        width: 80%;
+        padding-right: 0%;
+        margin: auto;
+        margin-bottom: 3rem;
+    }
+
+    .homeMainTitle {
+        font-size: 2.5rem;
+    }
+}
+
+@media all and (min-width: 992px) and (max-width: 1025px) {
+    .homeBanner {
+        padding-left: 5rem;
+    }
+
+    .homeBannerTextContainer {
+        width: 45%;
+    }
+
+    .homeBannerImgContainer {
+        height: 100%;
+        width: 50%;
+    }
+
+    .homeBannerImg {
+        height: 125%;
+        right: -150%;
+        top: -10%;
+    }
+
+    .homeBannerTitle {
+        font-size: 3rem;
+    }
+
+    .homeBannerSubtitle {
+        font-size: 2.5rem;
+    }
+
+    /* ---------------------- */
+    .homeInfo {
+        padding: 7rem 0;
+    }
+
+    .homeInfoTextContainer {
+        padding-right: 5%;
+    }
+
+    .homeMainTitle {
+        font-size: 2.5rem;
+    }
+}
+
+@media all and (min-width: 1025px) and (max-width: 1600px) {
+    .homeBanner {
+        padding-left: 7rem;
+    }
+
+    .homeBannerTextContainer {
+        width: 45%;
+    }
+
+    .homeBannerImgContainer {
+        height: 100%;
+        width: 50%;
+    }
+
+    .homeBannerImg {
+        height: 125%;
+        right: -90%;
+        top: -10%;
+    }
+
+    .homeBannerTitle {
+        font-size: 3rem;
+    }
+
+    .homeBannerSubtitle {
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,326 @@
+.pagDetails {
+    min-height: 100vh;
+    background: linear-gradient(
+        to right,
+        #363636,
+        #141414 30%,
+        #141414 45%,
+        #000
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.detailsSection {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 80%;
+    padding-right: 2rem;
+    box-sizing: border-box;
+    color: #fdf9f3;
+}
+
+.detailsReturnBtn {
+    margin-right: auto;
+    width: 3rem;
+    aspect-ratio: 1 / 1;
+    margin-left: 10rem;
+    margin-bottom: 3rem;
+    background-color: transparent;
+    border: none;
+}
+
+.detailsReturnBtn img {
+    filter: invert(90%);
+    transform: rotate(180deg);
+    width: 100%;
+}
+
+.detailsImgContainer {
+    width: 30%;
+    height: 50vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+}
+
+.detailsImg {
+    width: 120%;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    left: -150%;
+    animation-name: slidePic;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.detailsTextContainer {
+    box-shadow: 1px 1px 50px #161616;
+    height: 50vh;
+    background-color: #2e2e2e;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 4rem 5rem;
+}
+
+.detailsProductName {
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.detailsProductDesc {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.detailsProductPrice {
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.detailsProductState {
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.detailsProductAddToCart {
+    padding: 0.5rem 3rem;
+    color: #fdf9f3;
+    background-color: transparent;
+    border: 2px solid #fdf9f3;
+    font-size: 1.5rem;
+    border-radius: 30px;
+    margin: 0rem 0 0 auto;
+    transition: 0.1s;
+}
+.detailsProductAddToCart:hover {
+    color: #fdf9f3;
+    background-color: #fdf9f334;
+}
+.detailsProductAddToCart:active {
+    color: #fdf9f3;
+    background-color: #fdf9f361;
+}
+
+@keyframes slidePic {
+    0% {
+        left: -150%;
+        width: 80%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+/* --------------------- */
+
+@media all and (max-width: 380px) {
+    .detailsSection {
+        flex-direction: column;
+        padding-right: 0;
+        width: 90%;
+        position: relative;
+    }
+    .detailsImgContainer {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .detailsImg {
+        width: 100%;
+        left: initial;
+        animation-duration: 1s;
+    }
+
+    .detailsTextContainer {
+        aspect-ratio: 1 / 0.6;
+        margin-bottom: 7rem;
+        padding: 3rem 3rem;
+        height: auto;
+    }
+
+    .detailsReturnBtn {
+        margin-left: 1rem;
+        margin-top: 100px;
+        margin-bottom: 0;
+    }
+
+    .detailsProductAddToCart {
+        padding: 0.5rem 2rem;
+        font-size: 1.3rem;
+    }
+
+    @keyframes slidePic {
+        0% {
+            bottom: -90%;
+            width: 80%;
+        }
+        100% {
+            bottom: 0%;
+            width: 100%;
+        }
+    }
+}
+
+@media all and (min-width: 380px) and (max-width: 540px) {
+    .detailsSection {
+        flex-direction: column;
+        padding-right: 0;
+        width: 90%;
+        position: relative;
+    }
+    .detailsImgContainer {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .detailsImg {
+        width: 100%;
+        left: initial;
+        animation-duration: 1s;
+    }
+
+    .detailsTextContainer {
+        aspect-ratio: 1 / 0.6;
+        margin-bottom: 7rem;
+        padding: 3rem 3rem;
+        height: auto;
+    }
+
+    .detailsReturnBtn {
+        margin-left: 1.5rem;
+        margin-top: 100px;
+        margin-bottom: 0;
+    }
+    .detailsProductAddToCart {
+        padding: 0.5rem 2rem;
+        font-size: 1.3rem;
+    }
+
+    @keyframes slidePic {
+        0% {
+            bottom: -90%;
+            width: 80%;
+        }
+        100% {
+            bottom: 0%;
+            width: 100%;
+        }
+    }
+}
+
+@media all and (min-width: 540px) and (max-width: 768px) {
+    .detailsSection {
+        flex-direction: column;
+        padding-right: 0;
+        position: relative;
+    }
+    .detailsImgContainer {
+        width: 80%;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .detailsImg {
+        width: 100%;
+        left: initial;
+        animation-duration: 1s;
+    }
+
+    .detailsTextContainer {
+        aspect-ratio: 1 / 0.6;
+        margin-bottom: 7rem;
+        padding: 3rem 3rem;
+        height: auto;
+    }
+
+    .detailsReturnBtn {
+        margin-left: 4rem;
+        margin-top: 100px;
+        margin-bottom: 0;
+    }
+
+    @keyframes slidePic {
+        0% {
+            bottom: -100%;
+            width: 80%;
+        }
+        100% {
+            bottom: 0%;
+            width: 100%;
+        }
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 992px) {
+    .detailsSection {
+        flex-direction: column;
+        padding-right: 0;
+        position: relative;
+    }
+    .detailsImgContainer {
+        width: 70%;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .detailsImg {
+        width: 100%;
+        left: initial;
+        animation-duration: 1s;
+    }
+
+    .detailsTextContainer {
+        aspect-ratio: 1 / 0.6;
+        margin-bottom: 7rem;
+        height: auto;
+    }
+
+    .detailsReturnBtn {
+        margin-left: 7rem;
+        margin-top: 100px;
+        margin-bottom: 0;
+    }
+
+    @keyframes slidePic {
+        0% {
+            bottom: -100%;
+            width: 80%;
+        }
+        100% {
+            bottom: 0%;
+            width: 100%;
+        }
+    }
+}
+
+@media all and (min-width: 992px) and (max-width: 1025px) {
+    @keyframes slidePic {
+        0% {
+            left: -150%;
+            width: 80%;
+        }
+        100% {
+            left: -80%;
+            width: 210%;
+        }
+    }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1440px) {
+    .detailsImgContainer {
+        width: 40%;
+    }
+}

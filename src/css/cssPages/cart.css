@@ -1,0 +1,251 @@
+.pagCarrito {
+    min-height: 100vh;
+    background: linear-gradient(
+        to right,
+        #363636,
+        #141414 30%,
+        #141414 45%,
+        #000
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pagCarritoTitle {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.pagCarritoTableContainer {
+    width: 80%;
+    margin-top: 12rem;
+    margin-bottom: 3rem;
+}
+
+.pagCarritoTable {
+    width: 100%;
+}
+
+.pagCarritoItem {
+    background-color: #484848;
+    padding: 0 4rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #fff;
+}
+
+.pagCarritoPagarBtn {
+    margin-top: auto;
+    margin-bottom: 3rem;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    background-color: transparent;
+    padding: 0.8em 2em;
+    font-size: 1.3rem;
+}
+
+.pagCarritoPagarBtnFlecha {
+    filter: invert(100);
+    height: 100%;
+}
+
+.pagCarritoTotal {
+    width: 100%;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* ------------- */
+.pagCarritoItemShowAmount {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.pagCarritoItemName {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.pagCarritoItemPrice {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.pagCarritoItemImg img {
+    height: 120px;
+    margin: 0.5rem 0;
+}
+
+.pagCarritoItemEditAmount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.itemCarritoEditAmoutChild {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8a8a8a;
+    border: none;
+    color: #fff;
+}
+
+.itemCarritoLess {
+    font-size: 2rem;
+    border-radius: 10px 0 0 10px;
+}
+
+.itemCarritoLess.disabled {
+    font-size: 2rem;
+    border-radius: 10px 0 0 10px;
+    color: #bdbdbd;
+}
+
+.itemCarritoAmount {
+    font-size: 1.2rem;
+    cursor: default;
+}
+
+.itemCarritoMore {
+    font-size: 2rem;
+    border-radius: 0 10px 10px 0;
+}
+
+.itemCarritoDelete {
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    border: none;
+}
+
+.itemCarritoDelete img {
+    height: 80%;
+    filter: invert(100%);
+}
+
+/* --------------------- */
+
+@media all and (max-width: 768px) {
+    .pagCarritoTableContainer {
+        width: 90%;
+    }
+
+    .pagCarritoItem {
+        padding: 1.5rem;
+        flex-direction: column;
+    }
+
+    .pagCarritoItemEditAmount {
+        order: 4;
+        margin-bottom: 1rem;
+    }
+
+    .itemCarritoEditAmoutChild {
+        height: 35px;
+        width: 35px;
+    }
+
+    .pagCarritoItemImg img {
+        height: 100px;
+        margin-bottom: 1rem;
+        order: 1;
+    }
+
+    .pagCarritoItemDelete {
+        order: 5;
+    }
+
+    .itemCarritoDelete img {
+        height: 70%;
+    }
+
+    .pagCarritoItemShowAmount {
+        order: 2;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .pagCarritoItemName {
+        margin-bottom: 1rem;
+        order: 3;
+        font-size: 1.2rem;
+    }
+
+    .pagCarritoItemPrice {
+        margin-bottom: 1rem;
+        order: 5;
+        font-size: 1.2rem;
+    }
+
+    .pagCarritoPagarBtn {
+        font-size: 1rem;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 992px) {
+    .pagCarritoTableContainer {
+        width: 90%;
+    }
+
+    .pagCarritoItem {
+        padding: 0 3rem;
+    }
+
+    .itemCarritoEditAmoutChild {
+        height: 35px;
+        width: 35px;
+    }
+
+    .pagCarritoItemImg img {
+        height: 100px;
+    }
+
+    .itemCarritoDelete img {
+        height: 70%;
+    }
+
+    .pagCarritoItemShowAmount {
+        font-size: 1rem;
+    }
+
+    .pagCarritoItemName {
+        font-size: 1rem;
+    }
+
+    .pagCarritoItemPrice {
+        font-size: 1rem;
+    }
+
+    .pagCarritoPagarBtn {
+        font-size: 1rem;
+    }
+}
+
+@media all and (min-width: 992px) and (max-width: 1025px) {
+    .pagCarritoTableContainer {
+        width: 90%;
+    }
+
+    .pagCarritoItem {
+        padding: 0 3rem;
+    }
+
+    .itemCarritoEditAmoutChild {
+        height: 40px;
+        width: 40px;
+    }
+
+    .itemCarritoDelete img {
+        height: 70%;
+    }
+}
