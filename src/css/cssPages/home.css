@@ -33,6 +33,10 @@
     position: absolute;
     right: -25%;
     top: -10%;
+    animation-name: bannerImgAnimation;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
 }
 
 .homeBannerImgOverlay {
@@ -56,17 +60,20 @@
     color: #fdc500;
     font-size: 3.5rem;
     margin-top: 7rem;
+    font-weight: 800;
 }
 
 .homeBannerSubtitle {
     color: #fff;
     margin: 1.5rem 0;
     font-size: 3rem;
+    font-weight: 800;
 }
 
 .homeBannerParagraph {
     color: #fff;
     margin-bottom: 3rem;
+    line-height: 1.5;
 }
 
 .homeMainBtn {
@@ -84,6 +91,7 @@
     display: flex;
     background-color: #fdf9f3;
     padding: 10rem 0;
+    color: var(--tertiary-color);
 }
 
 .homeInfoImgContainer {
@@ -108,8 +116,15 @@
 }
 
 .homeMainTitle {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    font-weight: 900;
     margin: 1rem 0 1.5rem;
+}
+
+.homeInfoParagraph {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
 /* ---------------------- */
@@ -120,11 +135,12 @@
     width: 75%;
     margin: auto;
     padding-top: 10rem;
+    color: var(--tertiary-color);
 }
 
 .homeMenuCardContainer {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     margin-top: 3rem;
 }
@@ -143,13 +159,14 @@
 .menuCard {
     flex-grow: 1;
     min-width: 300px;
-    max-width: 33%;
+    max-width: 30%;
     text-decoration: none;
     margin-bottom: 1rem;
 }
 
 .menuCard figure {
-    margin-bottom: 0rem;
+    margin: 0rem;
+    line-height: 1;
 }
 
 .menuCardLink {
@@ -174,10 +191,13 @@
 
 .menuCardBtn {
     font-weight: 500;
+    font-family: "bliss";
     border: none;
     background-color: transparent;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    margin-top: 2rem;
     padding: 0%;
+    padding-bottom: 0.2rem;
     border-bottom: 2px solid #fdc500;
 }
 
@@ -187,10 +207,23 @@
 
 .homeMainBtn.seeMoreMenuBtn {
     margin: 6rem auto;
+    font-family: "Bliss";
 }
 .homeMainBtn.seeMoreMenuBtn.active {
     display: none;
+    font-family: "Bliss";
 }
+
+/* @keyframes bannerImgAnimation {
+    from {
+        right: -100%;
+        height: 100%;
+    }
+    to {
+        right: -25%;
+        height: 125%;
+    }
+} */
 
 /* ------------------------- */
 
@@ -225,10 +258,8 @@
     }
 
     .homeBannerImg {
-        height: 180%;
         right: -40%;
         bottom: auto;
-        top: 250%;
         opacity: 0.3;
     }
 
@@ -238,6 +269,17 @@
 
     .homeBannerSubtitle {
         font-size: 1.5rem;
+    }
+
+    @keyframes bannerImgAnimation {
+        from {
+            height: 180%;
+            top: 300%;
+        }
+        to {
+            height: 180%;
+            top: 150%;
+        }
     }
     /* ---------------------- */
     .homeInfo {
@@ -332,10 +374,8 @@
     }
 
     .homeBannerImg {
-        height: 180%;
         right: -40%;
         bottom: auto;
-        top: 200%;
         opacity: 0.3;
     }
 
@@ -345,6 +385,17 @@
 
     .homeBannerSubtitle {
         font-size: 1.5rem;
+    }
+
+    @keyframes bannerImgAnimation {
+        from {
+            height: 180%;
+            top: 300%;
+        }
+        to {
+            height: 180%;
+            top: 150%;
+        }
     }
     /* ---------------------- */
     .homeInfo {
@@ -441,7 +492,6 @@
         height: 150%;
         right: -25%;
         bottom: auto;
-        top: 150%;
         opacity: 0.3;
     }
 
@@ -451,6 +501,17 @@
 
     .homeBannerSubtitle {
         font-size: 1.5rem;
+    }
+
+    @keyframes bannerImgAnimation {
+        from {
+            top: 200%;
+            height: 100%;
+        }
+        to {
+            height: 150%;
+            top: 150%;
+        }
     }
 
     /* ---------------------- */
@@ -544,11 +605,9 @@
     }
 
     .homeBannerImg {
-        height: 125%;
-        right: -12%;
-        bottom: -125%;
         top: auto;
         opacity: 0.3;
+        right: -12%;
     }
 
     .homeBannerTitle {
@@ -557,6 +616,16 @@
 
     .homeBannerSubtitle {
         font-size: 2rem;
+    }
+    @keyframes bannerImgAnimation {
+        from {
+            bottom: -100%;
+            height: 100%;
+        }
+        to {
+            height: 125%;
+            bottom: -80%;
+        }
     }
 
     /* ---------------------- */
@@ -620,13 +689,10 @@
     .homeBannerImgOverlay {
         display: none;
     }
-
     .homeBannerImg {
-        height: 125%;
-        right: -12%;
-        bottom: -80%;
         top: auto;
         opacity: 0.3;
+        right: -12%;
     }
 
     .homeBannerTitle {
@@ -635,6 +701,16 @@
 
     .homeBannerSubtitle {
         font-size: 2rem;
+    }
+    @keyframes bannerImgAnimation {
+        from {
+            bottom: -100%;
+            height: 100%;
+        }
+        to {
+            height: 125%;
+            bottom: -80%;
+        }
     }
 
     /* ---------------------- */
@@ -684,12 +760,6 @@
         width: 50%;
     }
 
-    .homeBannerImg {
-        height: 125%;
-        right: -150%;
-        top: -10%;
-    }
-
     .homeBannerTitle {
         font-size: 3rem;
     }
@@ -697,7 +767,17 @@
     .homeBannerSubtitle {
         font-size: 2.5rem;
     }
-
+    @keyframes bannerImgAnimation {
+        from {
+            right: -100%;
+            height: 100%;
+        }
+        to {
+            height: 125%;
+            right: -150%;
+            top: -10%;
+        }
+    }
     /* ---------------------- */
     .homeInfo {
         padding: 7rem 0;
@@ -726,17 +806,22 @@
         width: 50%;
     }
 
-    .homeBannerImg {
-        height: 125%;
-        right: -90%;
-        top: -10%;
-    }
-
     .homeBannerTitle {
         font-size: 3rem;
     }
 
     .homeBannerSubtitle {
         font-size: 2.5rem;
+    }
+    @keyframes bannerImgAnimation {
+        from {
+            right: -100%;
+            height: 100%;
+        }
+        to {
+            right: -45%;
+            height: 125%;
+            top: -10%;
+        }
     }
 }

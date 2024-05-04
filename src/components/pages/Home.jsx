@@ -59,7 +59,7 @@ const MenuCard = ({ object, setObjectPage, handleCart }) => {
                     localStorage.setItem("objectPage", JSON.stringify(object));
                 }}
             >
-                <figure>
+                <figure className="menuCardFigure">
                     <img
                         className="menuCardImg"
                         src={object.img}
@@ -110,9 +110,9 @@ const Home = ({ setObjectPage, handleCart }) => {
                         viaje de sabor por Asia en un ambiente agradable y
                         relajado.
                     </p>
-                    <a className="homeMainBtn" href="#mainMenu">
+                    <HashLink smooth to="/#mainMenu" className="homeMainBtn">
                         Menú
-                    </a>
+                    </HashLink>
                 </div>
                 <div className="homeBannerImgContainer">
                     <img src={homeBannerImg} alt="" className="homeBannerImg" />

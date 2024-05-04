@@ -2,12 +2,49 @@ html {
     font-size: 100%;
 }
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: Bliss, Inter, system-ui, Avenir, Helvetica, Arial;
+    --tertiary-color: #271d1c;
 }
 
+@font-face {
+    font-family: "Bliss";
+    src: url(./assets/font/BlissProExtraLight.otf);
+    font-weight: 100;
+}
+@font-face {
+    font-family: "Bliss";
+    src: url(./assets/font/BlissProLight.otf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Bliss";
+    src: url(./assets/font/BlissProRegular.otf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Bliss";
+    src: url(./assets/font/BlissProMedium.otf);
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Bliss";
+    src: url(./assets/font/BlissProBold.otf);
+    font-weight: 800;
+}
+@font-face {
+    font-family: "Bliss";
+    src: url(./assets/font/BlissProExtraBold.otf);
+    font-weight: 900;
+}
+@font-face {
+    font-family: "Bliss";
+    src: url(./assets/font/BlissProHeavy.otf);
+    font-weight: 1000;
+}
 body {
     margin: 0;
     min-height: 100vh;
+    font-family: "Bliss";
 }
 
 button {
