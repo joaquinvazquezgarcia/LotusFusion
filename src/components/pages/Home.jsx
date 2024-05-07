@@ -37,7 +37,7 @@ const MenuCard = ({ object, handleCart }) => {
     );
 };
 
-const Home = ({ setObjectPage, handleCart }) => {
+const Home = ({ handleCart }) => {
     /* Opening menu of products */
     const [menuState, setMenuState] = useState("");
     const handleMenu = () => {
@@ -149,17 +149,14 @@ const Home = ({ setObjectPage, handleCart }) => {
                         {" "}
                         <MenuCard
                             object={productsArray[0]}
-                            setObjectPage={setObjectPage}
                             handleCart={handleCart}
                         />
                         <MenuCard
                             object={productsArray[1]}
-                            setObjectPage={setObjectPage}
                             handleCart={handleCart}
                         />
                         <MenuCard
                             object={productsArray[2]}
-                            setObjectPage={setObjectPage}
                             handleCart={handleCart}
                         />
                     </div>
@@ -182,7 +179,6 @@ const Home = ({ setObjectPage, handleCart }) => {
                             <MenuCard
                                 object={product}
                                 key={product.id}
-                                setObjectPage={setObjectPage}
                                 handleCart={handleCart}
                             />
                         );

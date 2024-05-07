@@ -6,12 +6,6 @@ import ProductDetails from "./components/pages/Details.jsx";
 import PaginaCarrito from "./components/pages/Cart.jsx";
 
 function App() {
-    const [objectPage, setObjectPage] = useState(
-        localStorage.getItem("objectPage") == undefined
-            ? {}
-            : JSON.parse(localStorage.getItem("objectPage"))
-    );
-
     const handleCart = event => {
         const itemObject = JSON.parse(event.target.value);
         const cartArray =
@@ -45,19 +39,13 @@ function App() {
                 <Routes>
                     <Route
                         path="/"
-                        element={
-                            <Home
-                                setObjectPage={setObjectPage}
-                                handleCart={handleCart}
-                            ></Home>
-                        }
+                        element={<Home handleCart={handleCart}></Home>}
                     ></Route>
 
                     <Route
                         path="/details/:id"
                         element={
                             <ProductDetails
-                                objectPage={objectPage}
                                 handleCart={handleCart}
                             ></ProductDetails>
                         }
