@@ -54,7 +54,7 @@ function App() {
                     ></Route>
 
                     <Route
-                        path="/details"
+                        path="/details/:id"
                         element={
                             <ProductDetails
                                 objectPage={objectPage}

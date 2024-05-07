@@ -1,6 +1,7 @@
 {
     "products": [
         {
+            "id": "1",
             "name": "POLLO AL CURRY ROJO",
             "state": true,
             "price": 5600,
@@ -8,6 +9,7 @@
             "img": "/src/assets/polloAlCurry.png"
         },
         {
+            "id": "2",
             "name": "PAD TAILANDES",
             "state": true,
             "price": 300,
@@ -15,6 +17,7 @@
             "img": "/src/assets/padTailandes.png"
         },
         {
+            "id": "3",
             "name": "POLLO Y ANACARDOS",
             "state": true,
             "price": 5000,
@@ -22,6 +25,7 @@
             "img": "/src/assets/polloYAnacardos.png"
         },
         {
+            "id": "4",
             "name": "WOK MIXTO DE VEGETALES",
             "state": true,
             "price": 5600,
@@ -29,6 +33,7 @@
             "img": "/src/assets/polloAlCurry.png"
         },
         {
+            "id": "5",
             "name": "PAD DE VEGETALES SALTEADOS",
             "state": true,
             "price": 300,
@@ -36,6 +41,7 @@
             "img": "/src/assets/padTailandes.png"
         },
         {
+            "id": "6",
             "name": "POLLO SALTEADO",
             "state": true,
             "price": 5000,

@@ -2,24 +2,15 @@ import "../../css/cssPages/home.css";
 import { useEffect, useState } from "react";
 import homeBannerImg from "../../assets/homeBannerImg.jpg";
 import homeAboutUsImg from "../../assets/homeAboutUsImg.png";
-import polloAlCurry from "../../assets/polloAlCurry.png";
-import padTailandes from "../../assets/padTailandes.png";
-import polloYAnacardos from "../../assets/polloYAnacardos.png";
 import { HashLink } from "react-router-hash-link";
 import { getProducts } from "../../helpers/queries.js";
 
-/* Test */
-
-const MenuCard = ({ object, setObjectPage, handleCart }) => {
+const MenuCard = ({ object, handleCart }) => {
     return (
         <article className="menuCard">
             <HashLink
-                to={"/details#detailsPage"}
+                to={"/details/" + object.id + "/#detailsPage"}
                 className="menuCardLink"
-                onClick={() => {
-                    setObjectPage(object);
-                    localStorage.setItem("objectPage", JSON.stringify(object));
-                }}
             >
                 <figure className="menuCardFigure">
                     <img
@@ -47,13 +38,14 @@ const MenuCard = ({ object, setObjectPage, handleCart }) => {
 };
 
 const Home = ({ setObjectPage, handleCart }) => {
-    /* open and closing menu */
+    /* Opening menu of products */
     const [menuState, setMenuState] = useState("");
     const handleMenu = () => {
         menuState == "" ? setMenuState("active") : setMenuState("");
     };
-    const [productsArray, setProductsArray] = useState([]);
 
+    //Obtain product's array on Mounting stage from API
+    const [productsArray, setProductsArray] = useState([]);
     useEffect(() => {
         obtainPoducts();
     }, []);
@@ -63,11 +55,10 @@ const Home = ({ setObjectPage, handleCart }) => {
             const data = await response.json();
             setProductsArray(data);
         } else {
-            //Mostrar un mensaje de error elegante
+            //Show a nice error alert to client
         }
     };
 
-    let nextId = 0;
     return (
         <main>
             <section className="homeBanner">
@@ -190,7 +181,7 @@ const Home = ({ setObjectPage, handleCart }) => {
                         return (
                             <MenuCard
                                 object={product}
-                                key={nextId++}
+                                key={product.id}
                                 setObjectPage={setObjectPage}
                                 handleCart={handleCart}
                             />
