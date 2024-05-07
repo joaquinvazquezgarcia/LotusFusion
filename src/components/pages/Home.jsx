@@ -1,52 +1,14 @@
 import "../../css/cssPages/home.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import homeBannerImg from "../../assets/homeBannerImg.jpg";
 import homeAboutUsImg from "../../assets/homeAboutUsImg.png";
 import polloAlCurry from "../../assets/polloAlCurry.png";
 import padTailandes from "../../assets/padTailandes.png";
 import polloYAnacardos from "../../assets/polloYAnacardos.png";
 import { HashLink } from "react-router-hash-link";
+import { getProducts } from "../../helpers/queries.js";
 
-/*-------------- Eliminar cuando se una el backend  --------------*/
-/* La pagina de inicio debe recibir un array de productos y eso es todo lo necesario para que funcione */
-const plato1 = {
-    name: "POLLO AL CURRY ROJO",
-    state: true,
-    price: 5600,
-    details: "Filete de Pollo salteado con curry rojo y arroz.",
-    img: polloAlCurry,
-};
-const plato2 = {
-    name: "PAD TAILANDES",
-    state: true,
-    price: 300,
-    details: "Filete de Pollo salteado con curry rojo y arroz.",
-    img: padTailandes,
-};
-const plato3 = {
-    name: "POLLO Y ANACARDOS",
-    state: true,
-    price: 5000,
-    details: "Filete de Pollo salteado con curry rojo y arroz.",
-    img: polloYAnacardos,
-};
-
-/* Estos serían los productos que vendrian desde el back */
-const productsArray = [
-    plato1,
-    plato2,
-    plato3,
-    plato2,
-    plato1,
-    plato1,
-    plato3,
-    plato2,
-    plato1,
-    plato3,
-    plato3,
-    plato2,
-];
-/* ------------------------------------------------------------ */
+/* Test */
 
 const MenuCard = ({ object, setObjectPage, handleCart }) => {
     return (
@@ -85,9 +47,24 @@ const MenuCard = ({ object, setObjectPage, handleCart }) => {
 };
 
 const Home = ({ setObjectPage, handleCart }) => {
+    /* open and closing menu */
     const [menuState, setMenuState] = useState("");
     const handleMenu = () => {
         menuState == "" ? setMenuState("active") : setMenuState("");
+    };
+    const [productsArray, setProductsArray] = useState([]);
+
+    useEffect(() => {
+        obtainPoducts();
+    }, []);
+    const obtainPoducts = async () => {
+        const response = await getProducts();
+        if (response.status === 200) {
+            const data = await response.json();
+            setProductsArray(data);
+        } else {
+            //Mostrar un mensaje de error elegante
+        }
     };
 
     let nextId = 0;
@@ -170,23 +147,32 @@ const Home = ({ setObjectPage, handleCart }) => {
             <section className="homeMenu" id="mainMenu">
                 <h3 className="homeMainHeader">Nuestro menú</h3>
                 <h2 className="homeMainTitle">PLATOS POPULARES</h2>
-                <div className="homeMenuCardContainer">
-                    <MenuCard
-                        object={productsArray[0]}
-                        setObjectPage={setObjectPage}
-                        handleCart={handleCart}
-                    />
-                    <MenuCard
-                        object={productsArray[1]}
-                        setObjectPage={setObjectPage}
-                        handleCart={handleCart}
-                    />
-                    <MenuCard
-                        object={productsArray[2]}
-                        setObjectPage={setObjectPage}
-                        handleCart={handleCart}
-                    />
-                </div>
+                {productsArray.length < 3 ? (
+                    ""
+                ) : (
+                    <div
+                        className={
+                            "homeMenuCardContainer favorites" + " " + menuState
+                        }
+                    >
+                        {" "}
+                        <MenuCard
+                            object={productsArray[0]}
+                            setObjectPage={setObjectPage}
+                            handleCart={handleCart}
+                        />
+                        <MenuCard
+                            object={productsArray[1]}
+                            setObjectPage={setObjectPage}
+                            handleCart={handleCart}
+                        />
+                        <MenuCard
+                            object={productsArray[2]}
+                            setObjectPage={setObjectPage}
+                            handleCart={handleCart}
+                        />
+                    </div>
+                )}
                 <button
                     className={
                         "homeMainBtn" + " " + "seeMoreMenuBtn" + " " + menuState
@@ -197,11 +183,7 @@ const Home = ({ setObjectPage, handleCart }) => {
                 </button>
                 <div
                     className={
-                        "homeMenuCardContainer" +
-                        " " +
-                        "seeMore" +
-                        " " +
-                        menuState
+                        "homeMenuCardContainer seeMore " + " " + menuState
                     }
                 >
                     {productsArray.map(product => {

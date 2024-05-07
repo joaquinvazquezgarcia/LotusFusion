@@ -154,6 +154,9 @@
     height: initial;
     overflow-y: initial;
 }
+.homeMenuCardContainer.favorites.active {
+    display: none;
+}
 
 /* ------------------------ */
 .menuCard {
