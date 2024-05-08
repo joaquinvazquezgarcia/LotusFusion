@@ -6,6 +6,10 @@ html {
     --tertiary-color: #271d1c;
 }
 
+* {
+    font-family: Bliss, Inter, system-ui, Avenir, Helvetica, Arial;
+}
+
 @font-face {
     font-family: "Bliss";
     src: url(./assets/font/BlissProExtraLight.otf);

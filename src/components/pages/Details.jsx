@@ -1,8 +1,27 @@
 import returnArrow from "../../assets/arrow-forward.svg";
 import "../../css/cssPages/details.css";
 import { HashLink } from "react-router-hash-link";
+import { getProduct } from "../../helpers/queries";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-const ProductDetails = ({ objectPage, handleCart }) => {
+const ProductDetails = ({ handleCart }) => {
+    /* Load product on Mouning */
+    const [product, setProduct] = useState({});
+    useEffect(() => {
+        loadProduct();
+    });
+    const { id } = useParams();
+    const loadProduct = async () => {
+        const response = await getProduct(id);
+        if (response.status === 200) {
+            const data = await response.json();
+            setProduct(data);
+        } else {
+            /* Put a nice error message for user */
+        }
+    };
+
     return (
         <main className="pagDetails" id="detailsPage">
             <HashLink smooth to="/#mainMenu" className="detailsReturnBtn">
@@ -10,24 +29,24 @@ const ProductDetails = ({ objectPage, handleCart }) => {
             </HashLink>
             <section className="detailsSection">
                 <div className="detailsImgContainer">
-                    <img src={objectPage.img} alt="" className="detailsImg" />
+                    <img src={product.img} alt="" className="detailsImg" />
                 </div>
                 <div className="detailsTextContainer">
-                    <h1 className="detailsProductName">{objectPage.name}</h1>
+                    <h1 className="detailsProductName">{product.name}</h1>
                     <p className="detailsProductDesc">
-                        {"- " + objectPage.details}
+                        {"- " + product.details}
                     </p>
                     <h3 className="detailsProductState">
-                        {objectPage.state
+                        {product.state
                             ? "Disponible"
                             : "No se encuentra disponible."}
                     </h3>
                     <h2 className="detailsProductPrice">
-                        {objectPage.price ? "$ " + objectPage.price : ""}
+                        {product.price ? "$ " + product.price : ""}
                     </h2>
-                    {objectPage != undefined ? (
+                    {product != undefined ? (
                         <button
-                            value={JSON.stringify(objectPage)}
+                            value={JSON.stringify(product)}
                             className="detailsProductAddToCart"
                             onClick={e => handleCart(e)}
                         >
