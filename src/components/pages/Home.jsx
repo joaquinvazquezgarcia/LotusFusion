@@ -139,36 +139,44 @@ const Home = ({ handleCart }) => {
                 <h3 className="homeMainHeader">Nuestro menú</h3>
                 <h2 className="homeMainTitle">PLATOS POPULARES</h2>
                 {productsArray.length < 3 ? (
-                    ""
+                    "Desafortunadamente no se puede mostrar el menú en este momento, por favor regrese mas tarde."
                 ) : (
-                    <div
-                        className={
-                            "homeMenuCardContainer favorites" + " " + menuState
-                        }
-                    >
-                        {" "}
-                        <MenuCard
-                            object={productsArray[0]}
-                            handleCart={handleCart}
-                        />
-                        <MenuCard
-                            object={productsArray[1]}
-                            handleCart={handleCart}
-                        />
-                        <MenuCard
-                            object={productsArray[2]}
-                            handleCart={handleCart}
-                        />
-                    </div>
+                    <>
+                        <div
+                            className={
+                                "homeMenuCardContainer favorites" +
+                                " " +
+                                menuState
+                            }
+                        >
+                            {" "}
+                            <MenuCard
+                                object={productsArray[0]}
+                                handleCart={handleCart}
+                            />
+                            <MenuCard
+                                object={productsArray[1]}
+                                handleCart={handleCart}
+                            />
+                            <MenuCard
+                                object={productsArray[2]}
+                                handleCart={handleCart}
+                            />
+                        </div>
+                        <button
+                            className={
+                                "homeMainBtn" +
+                                " " +
+                                "seeMoreMenuBtn" +
+                                " " +
+                                menuState
+                            }
+                            onClick={handleMenu}
+                        >
+                            Ver el menú completo
+                        </button>
+                    </>
                 )}
-                <button
-                    className={
-                        "homeMainBtn" + " " + "seeMoreMenuBtn" + " " + menuState
-                    }
-                    onClick={handleMenu}
-                >
-                    Ver el menú completo
-                </button>
                 <div
                     className={
                         "homeMenuCardContainer seeMore " + " " + menuState
