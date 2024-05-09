@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home.jsx";
 import ProductDetails from "./components/pages/Details.jsx";
 import PaginaCarrito from "./components/pages/Cart.jsx";
+import LoginRegister from "./components/pages/LoginRegister.jsx";
 
 function App() {
     const handleCart = event => {
@@ -32,6 +33,7 @@ function App() {
             localStorage.setItem("cart", JSON.stringify(updatedArray));
         }
     };
+    const [registering, setRegistering] = useState(false);
 
     return (
         <>
@@ -53,6 +55,15 @@ function App() {
                     <Route
                         path="/cart"
                         element={<PaginaCarrito></PaginaCarrito>}
+                    ></Route>
+                    <Route
+                        path="/login"
+                        element={
+                            <LoginRegister
+                                registering={registering}
+                                setRegistering={setRegistering}
+                            ></LoginRegister>
+                        }
                     ></Route>
                 </Routes>
             </BrowserRouter>

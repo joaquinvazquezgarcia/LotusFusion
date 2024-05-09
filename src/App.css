@@ -3,11 +3,13 @@ html {
 }
 :root {
     font-family: Bliss, Inter, system-ui, Avenir, Helvetica, Arial;
+    --secondary-color: #fdc500;
     --tertiary-color: #271d1c;
 }
 
 * {
     font-family: Bliss, Inter, system-ui, Avenir, Helvetica, Arial;
+    box-sizing: border-box;
 }
 
 @font-face {

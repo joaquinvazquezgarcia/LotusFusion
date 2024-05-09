@@ -30,8 +30,8 @@
 
 .pagCarritoItem {
     background-color: #484848;
-    padding: 0 4rem;
     color: #fff;
+    padding: 0 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
