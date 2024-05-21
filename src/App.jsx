@@ -5,6 +5,7 @@ import Home from "./components/pages/Home.jsx";
 import ProductDetails from "./components/pages/Details.jsx";
 import PaginaCarrito from "./components/pages/Cart.jsx";
 import LoginRegister from "./components/pages/LoginRegister.jsx";
+import DashboardAdmin from "./components/pages/DashboardAdmin.jsx";
 
 function App() {
     const handleCart = event => {
@@ -55,6 +56,10 @@ function App() {
                     <Route
                         path="/cart"
                         element={<PaginaCarrito></PaginaCarrito>}
+                    ></Route>
+                    <Route
+                        path="/admin/dashboard"
+                        element={<DashboardAdmin></DashboardAdmin>}
                     ></Route>
                     <Route
                         path="/login"
