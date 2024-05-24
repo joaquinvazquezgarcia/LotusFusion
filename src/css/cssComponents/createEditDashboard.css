@@ -4,7 +4,6 @@
     display: inline-block;
     width: 60px;
     height: 34px;
-    margin-right: auto;
     margin-top: 0.5em;
 }
 
@@ -99,9 +98,12 @@ input:checked + .slider:before {
     border: none;
     border-radius: 5px;
 }
-.createEditInput.textarea {
+.createEditSwitch {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 0.5rem;
 }
-
 .createEditSubmit {
     padding: 1.2rem 6rem 1.2rem 5rem;
     border-radius: 50px;
@@ -109,4 +111,34 @@ input:checked + .slider:before {
     background-color: var(--secondary-color);
     font-size: 2rem;
     margin: 3rem auto;
+}
+
+.productSwitchState {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0 0 0 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.productSwitchState span {
+    aspect-ratio: 1 / 1;
+    display: inline-block;
+    width: 2.5rem;
+    margin-right: 0.5rem;
+}
+.productSwitchState .thumb {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    transition: 0.2s;
+}
+.productSwitchState .thumb.down {
+    margin-top: 0.5rem;
+    transform: scaleY(-100%) scaleX(-100%);
+}
+.productInputAlert {
+    color: red;
+    font-size: 1.3rem;
+    margin: 0 0 0.5rem;
 }
