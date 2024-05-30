@@ -2,7 +2,10 @@ import "../../css/cssComponents/createEditDashboard.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import thumb from "../../assets/thumb.svg";
-import inputProductValidation from "../../helpers/productValidations.js";
+import { validateProdName } from "../../helpers/productValidations.js";
+import { validateProdPrice } from "../../helpers/productValidations.js";
+import { validateProdDesc } from "../../helpers/productValidations.js";
+import { validateProdUrl } from "../../helpers/productValidations.js";
 
 const CreateEditDashboard = () => {
     const [product, setProduct] = useState({});
@@ -16,41 +19,55 @@ const CreateEditDashboard = () => {
     const [productPriceErr, setProductPriceErr] = useState("");
     const [productDescriptionErr, setProductDescriptionErr] = useState("");
     const [productUrlErr, setProductUrlErr] = useState("");
+    const [productStockErr, setProductStockErr] = useState("");
 
     const handleSubmit = e => {
         e.preventDefault();
-        setProduct({
-            name: productName,
-            price: productPrice,
-            details: productDescription,
-            img: productUrl,
-            state: productStock,
-        });
+        if (
+            validateProdName(productName, setProductNameErr) &&
+            validateProdPrice(productPrice, setProductPriceErr) &&
+            validateProdDesc(productDescription, setProductDescriptionErr) &&
+            validateProdUrl(productUrl, setProductUrlErr)
+        ) {
+            if (
+                productName != undefined &&
+                productPrice != undefined &&
+                productDescription != undefined &&
+                productUrl != undefined &&
+                productStock != undefined
+            ) {
+                setProduct({
+                    name: productName,
+                    price: productPrice,
+                    details: productDescription,
+                    img: productUrl,
+                    state: productStock,
+                });
+                console.log(product);
+            }
+        }
     };
 
-    /* update product on change */
-    useEffect(() => {
-        console.log({
-            name: productName,
-            price: productPrice,
-            details: productDescription,
-            img: productUrl,
-            state: productStock,
-        });
-    }, [
-        productName,
-        productPrice,
-        productDescription,
-        productUrl,
-        productStock,
-    ]);
-
-    /* For stock checkbox */
-    const handleStock = e => {
-        e.target.value === true
-            ? (e.target.value = false)
-            : (e.target.value = true);
-    };
+    /* update product on change (must delete this)*/
+    useEffect(
+        () => {
+            console.log(
+                productName,
+                productPrice,
+                productDescription,
+                productUrl,
+                productStock
+            );
+        },
+        [],
+        [
+            productName,
+            productPrice,
+            productDescription,
+            productUrl,
+            productStock,
+        ]
+    );
 
     return (
         <section className="createEditSection">
@@ -70,12 +87,8 @@ const CreateEditDashboard = () => {
                     id="createProdName"
                     placeholder="Ej: PAD TAILANDES"
                     onChange={e => {
-                        inputProductValidation(
-                            "name",
-                            e.target.value,
-                            setProductNameErr,
-                            setProductName
-                        );
+                        validateProdName(e.target.value, setProductNameErr);
+                        setProductName(e.target.value);
                     }}
                 />
                 <p className="productInputAlert">{productNameErr}</p>
@@ -89,12 +102,8 @@ const CreateEditDashboard = () => {
                     id="createProdPrice"
                     placeholder="Ej: 5600"
                     onChange={e => {
-                        inputProductValidation(
-                            "price",
-                            e.target.value,
-                            setProductPriceErr,
-                            setProductPrice
-                        );
+                        validateProdPrice(e.target.value, setProductPriceErr);
+                        setProductPrice(e.target.value);
                     }}
                 />
                 <p className="productInputAlert">{productPriceErr}</p>
@@ -107,12 +116,11 @@ const CreateEditDashboard = () => {
                     className="createEditInput textarea"
                     placeholder="Ej: - Filete de Pollo salteado con curry rojo y arroz."
                     onChange={e => {
-                        inputProductValidation(
-                            "details",
+                        validateProdDesc(
                             e.target.value,
-                            setProductDescriptionErr,
-                            setProductDescription
+                            setProductDescriptionErr
                         );
+                        setProductDescription(e.target.value);
                     }}
                 ></textarea>
                 <p className="productInputAlert">{productDescriptionErr}</p>
@@ -126,12 +134,8 @@ const CreateEditDashboard = () => {
                     id="createProdUrl"
                     placeholder="Ej: https://images.com/product/pad-Thai"
                     onChange={e => {
-                        inputProductValidation(
-                            "url",
-                            e.target.value,
-                            setProductUrlErr,
-                            setProductUrl
-                        );
+                        validateProdUrl(e.target.value, setProductUrlErr);
+                        setProductUrl(e.target.value);
                     }}
                 />
                 <p className="productInputAlert">{productUrlErr}</p>
@@ -170,6 +174,7 @@ const CreateEditDashboard = () => {
                             : "El producto no se encuentra disponible."}
                     </p>
                 </div>
+                <p className="productInputAlert">{productStockErr}</p>
                 <button
                     className="createEditSubmit"
                     type="submit"
