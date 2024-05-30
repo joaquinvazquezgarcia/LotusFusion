@@ -29,45 +29,28 @@ const CreateEditDashboard = () => {
             validateProdDesc(productDescription, setProductDescriptionErr) &&
             validateProdUrl(productUrl, setProductUrlErr)
         ) {
-            if (
-                productName != undefined &&
-                productPrice != undefined &&
-                productDescription != undefined &&
-                productUrl != undefined &&
-                productStock != undefined
-            ) {
-                setProduct({
-                    name: productName,
-                    price: productPrice,
-                    details: productDescription,
-                    img: productUrl,
-                    state: productStock,
-                });
-                console.log(product);
-            }
+            setProduct({
+                name: productName,
+                price: productPrice,
+                details: productDescription,
+                img: productUrl,
+                state: productStock,
+            });
         }
     };
 
     /* update product on change (must delete this)*/
-    useEffect(
-        () => {
-            console.log(
-                productName,
-                productPrice,
-                productDescription,
-                productUrl,
-                productStock
-            );
-        },
-        [],
-        [
-            productName,
-            productPrice,
-            productDescription,
-            productUrl,
-            productStock,
-        ]
-    );
+    useEffect(() => {
+        if (
+            productName &&
+            productPrice &&
+            productDescription &&
+            productUrl &&
+            productStock
+        ) {
+            console.log(product);
+        }
+    }, [product]);
 
     return (
         <section className="createEditSection">
