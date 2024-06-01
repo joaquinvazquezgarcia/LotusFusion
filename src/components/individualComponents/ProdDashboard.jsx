@@ -1,8 +1,13 @@
 import "../../css/cssComponents/prodDashboard.css";
 import edit from "../../assets/editProducts.svg";
 import deleteImg from "../../assets/delete.svg";
+import { deleteProduct } from "../../helpers/queries";
 
 const ProductsDashboard = ({ productsArray }) => {
+    const handleClick = id => {
+        deleteProduct(id);
+    };
+
     return (
         <table className="dashboardTable productos">
             <thead>
@@ -28,7 +33,7 @@ const ProductsDashboard = ({ productsArray }) => {
                                 <button>
                                     <img src={edit} title="Editar Producto" />
                                 </button>
-                                <button>
+                                <button onClick={() => handleClick(product.id)}>
                                     <img
                                         src={deleteImg}
                                         title="Eliminar Producto"

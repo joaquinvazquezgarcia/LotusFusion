@@ -36,6 +36,17 @@ export const newProduct = async newProduct => {
         console.log(error);
     }
 };
+/* --------------- DELETE SINGLE PRODUCT --------------- */
+export const deleteProduct = async id => {
+    try {
+        const respuesta = await fetch(APIProducts + "/" + id, {
+            method: "DELETE",
+        });
+        return respuesta;
+    } catch (e) {
+        console.log(e);
+    }
+};
 
 /* --------------- GET ALL USERS ---------------*/
 export const getUsers = async () => {
