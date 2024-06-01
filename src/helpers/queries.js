@@ -21,6 +21,21 @@ export const getProduct = async id => {
         console.log(error);
     }
 };
+/* --------------- POST SINGLE PRODUCT --------------- */
+export const newProduct = async newProduct => {
+    try {
+        const response = await fetch(APIProducts, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newProduct),
+        });
+        return response;
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 /* --------------- GET ALL USERS ---------------*/
 export const getUsers = async () => {

@@ -15,11 +15,19 @@ const DashboardInnerComp = ({
     const [productsArray, setProductsArray] = useState([]);
     const [usersArray, setUsersArray] = useState([]);
     const [ordersArray, setOrdersArray] = useState([]);
+    /* Cuando se actualizan los productos */
     useEffect(() => {
         obtainPoducts();
+    }, [productsArray]);
+    /* Cuando se actualizan los usuarios */
+    useEffect(() => {
         obtainUsers();
+    }, [usersArray]);
+    /* Cuando se actualizan las ordenes */
+    useEffect(() => {
         obtainOrders();
-    }, []);
+    }, [ordersArray]);
+
     const obtainPoducts = async () => {
         const response = await getProducts();
         if (response.status === 200) {
@@ -47,6 +55,7 @@ const DashboardInnerComp = ({
             //Show a nice error alert to admin
         }
     };
+
     if (dashboard) {
         return (
             <section className="dashboardAdmin">

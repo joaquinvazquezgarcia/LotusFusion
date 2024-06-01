@@ -6,13 +6,14 @@ import { validateProdName } from "../../helpers/productValidations.js";
 import { validateProdPrice } from "../../helpers/productValidations.js";
 import { validateProdDesc } from "../../helpers/productValidations.js";
 import { validateProdUrl } from "../../helpers/productValidations.js";
+import { newProduct } from "../../helpers/queries.js";
 
 const CreateEditDashboard = () => {
     const [product, setProduct] = useState({});
-    const [productName, setProductName] = useState();
-    const [productPrice, setProductPrice] = useState();
-    const [productDescription, setProductDescription] = useState();
-    const [productUrl, setProductUrl] = useState();
+    const [productName, setProductName] = useState("");
+    const [productPrice, setProductPrice] = useState("");
+    const [productDescription, setProductDescription] = useState("");
+    const [productUrl, setProductUrl] = useState("");
     const [productStock, setProductStock] = useState(true);
     const [productStockState, setProductStockState] = useState(true);
     const [productNameErr, setProductNameErr] = useState("");
@@ -39,6 +40,10 @@ const CreateEditDashboard = () => {
         }
     };
 
+    const handleReset = e => {
+        console.log(e);
+    };
+
     /* update product on change (must delete this)*/
     useEffect(() => {
         if (
@@ -48,7 +53,12 @@ const CreateEditDashboard = () => {
             productUrl &&
             productStock
         ) {
-            console.log(product);
+            newProduct(product);
+            /* Clear form*/
+            setProductName("");
+            setProductPrice("");
+            setProductDescription("");
+            setProductUrl("");
         }
     }, [product]);
 
@@ -64,6 +74,7 @@ const CreateEditDashboard = () => {
                     NOMBRE DEL PRODUCTO
                 </label>
                 <input
+                    value={productName}
                     className="createEditInput"
                     type="text"
                     name="productName"
@@ -79,6 +90,7 @@ const CreateEditDashboard = () => {
                     PRECIO
                 </label>
                 <input
+                    value={productPrice}
                     className="createEditInput"
                     type="number"
                     name=""
@@ -94,6 +106,7 @@ const CreateEditDashboard = () => {
                     DESCRIPCIÓN DEL PRODUCTO
                 </label>
                 <textarea
+                    value={productDescription}
                     name="description"
                     id="createProdDesc"
                     className="createEditInput textarea"
@@ -111,6 +124,7 @@ const CreateEditDashboard = () => {
                     {"IMAGEN DEL PRODUCTO (URL)"}
                 </label>
                 <input
+                    value={productUrl}
                     className="createEditInput"
                     type="url"
                     name=""
@@ -162,6 +176,9 @@ const CreateEditDashboard = () => {
                     className="createEditSubmit"
                     type="submit"
                     onClick={e => handleSubmit(e)}
+                    onSubmit={e => {
+                        handleReset(e);
+                    }}
                 >
                     + Agregar producto
                 </button>

@@ -1,328 +1,328 @@
 {
-    "products": [
+  "products": [
+    {
+      "id": "1",
+      "name": "POLLO AL CURRY ROJO",
+      "price": 5600,
+      "details": "Filete de Pollo salteado con curry rojo y arroz.",
+      "img": "/src/assets/polloAlCurry.png",
+      "state": true
+    },
+    {
+      "id": "2",
+      "name": "PAD TAILANDES",
+      "price": 300,
+      "details": "Filete de Pollo salteado con curry rojo y arroz.",
+      "img": "/src/assets/padTailandes.png",
+      "state": true
+    },
+    {
+      "id": "3",
+      "name": "POLLO Y ANACARDOS",
+      "price": 5000,
+      "details": "Filete de Pollo salteado con curry rojo y arroz.",
+      "img": "/src/assets/polloYAnacardos.png",
+      "state": true
+    },
+    {
+      "id": "4",
+      "name": "WOK MIXTO DE VEGETALES",
+      "price": 5600,
+      "details": "Filete de Pollo salteado con curry rojo y arroz.",
+      "img": "/src/assets/polloAlCurry.png",
+      "state": true
+    },
+    {
+      "id": "5",
+      "name": "PAD DE VEGETALES SALTEADOS",
+      "price": 300,
+      "details": "Filete de Pollo salteado con curry rojo y arroz.",
+      "img": "/src/assets/padTailandes.png",
+      "state": true
+    },
+    {
+      "id": "6",
+      "name": "PAD DE VEGETALES SALTEADOS",
+      "price": 300,
+      "details": "Filete de Pollo salteado con curry rojo y arroz.",
+      "img": "/src/assets/padTailandes.png",
+      "state": true
+    },
+    {
+      "id": "7",
+      "name": "PAD DE VEGETALES SALTEADOS",
+      "price": 300,
+      "details": "Filete de Pollo salteado con curry rojo y arroz.",
+      "img": "/src/assets/padTailandes.png",
+      "state": true
+    },
+    {
+      "id": "8",
+      "name": "PAD DE VEGETALES SALTEADOS",
+      "price": 300,
+      "details": "Filete de Pollo salteado con curry rojo y arroz.",
+      "img": "/src/assets/padTailandes.png",
+      "state": true
+    },
+    {
+      "id": "dca0",
+      "name": "CACA con COCA",
+      "price": "5600",
+      "details": "That condition is not initially met in your example because this.state.name is not initially set. Therefore, the input is initially uncontrolled. Once the onChange handler is triggered for the first time, this.state.name gets set",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThZT3R43TsUuK5XfNwnjuZnaDOTBOEoworCg&s",
+      "state": true
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Juan Lopez",
+      "email": "juanilopezz@gmail.com",
+      "profile": 300,
+      "password": "Filete de Pollo salteado con curry rojo y arroz.",
+      "state": true
+    },
+    {
+      "id": "2",
+      "name": "Marcos Juares",
+      "email": "marqjuarezg@gmail.com",
+      "profile": 300,
+      "password": "Filete de Pollo salteado con curry rojo y arroz.",
+      "state": true
+    },
+    {
+      "id": "3",
+      "name": "Miguel Marquez",
+      "email": "mmarquez2@gmail.com",
+      "profile": 300,
+      "password": "Filete de Pollo salteado con curry rojo y arroz.",
+      "state": true
+    },
+    {
+      "id": "4",
+      "name": "Andres Miguel",
+      "email": "andrumiguel07@gmail.com",
+      "profile": 300,
+      "password": "Filete de Pollo salteado con curry rojo y arroz.",
+      "state": true
+    },
+    {
+      "id": "5",
+      "name": "Andres Miguel",
+      "email": "andrumiguel07@gmail.com",
+      "profile": 300,
+      "password": "Filete de Pollo salteado con curry rojo y arroz.",
+      "state": true
+    },
+    {
+      "id": "6",
+      "name": "Andres Miguel",
+      "email": "andrumiguel07@gmail.com",
+      "profile": 300,
+      "password": "Filete de Pollo salteado con curry rojo y arroz.",
+      "state": true
+    },
+    {
+      "id": "7",
+      "name": "Andres Miguel",
+      "email": "andrumiguel07@gmail.com",
+      "profile": 300,
+      "password": "Filete de Pollo salteado con curry rojo y arroz.",
+      "state": true
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "user": "Andres Miguel",
+      "date": "09/05/24",
+      "state": "Pendiente",
+      "products": [
         {
-            "id": "1",
-            "name": "POLLO AL CURRY ROJO",
-            "price": 5600,
-            "details": "Filete de Pollo salteado con curry rojo y arroz.",
-            "img": "/src/assets/polloAlCurry.png",
-            "state": true
+          "id": "7",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
         },
         {
-            "id": "2",
-            "name": "PAD TAILANDES",
-            "price": 300,
-            "details": "Filete de Pollo salteado con curry rojo y arroz.",
-            "img": "/src/assets/padTailandes.png",
-            "state": true
+          "id": "8",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
         },
         {
-            "id": "3",
-            "name": "POLLO Y ANACARDOS",
-            "price": 5000,
-            "details": "Filete de Pollo salteado con curry rojo y arroz.",
-            "img": "/src/assets/polloYAnacardos.png",
-            "state": true
-        },
-        {
-            "id": "4",
-            "name": "WOK MIXTO DE VEGETALES",
-            "price": 5600,
-            "details": "Filete de Pollo salteado con curry rojo y arroz.",
-            "img": "/src/assets/polloAlCurry.png",
-            "state": true
-        },
-        {
-            "id": "5",
-            "name": "PAD DE VEGETALES SALTEADOS",
-            "price": 300,
-            "details": "Filete de Pollo salteado con curry rojo y arroz.",
-            "img": "/src/assets/padTailandes.png",
-            "state": true
-        },
-        {
-            "id": "6",
-            "name": "PAD DE VEGETALES SALTEADOS",
-            "price": 300,
-            "details": "Filete de Pollo salteado con curry rojo y arroz.",
-            "img": "/src/assets/padTailandes.png",
-            "state": true
-        },
-        {
-            "id": "7",
-            "name": "PAD DE VEGETALES SALTEADOS",
-            "price": 300,
-            "details": "Filete de Pollo salteado con curry rojo y arroz.",
-            "img": "/src/assets/padTailandes.png",
-            "state": true
-        },
-        {
-            "id": "8",
-            "name": "PAD DE VEGETALES SALTEADOS",
-            "price": 300,
-            "details": "Filete de Pollo salteado con curry rojo y arroz.",
-            "img": "/src/assets/padTailandes.png",
-            "state": true
-        },
-        {
-            "id": "9",
-            "name": "PAD DE VEGETALES SALTEADOS",
-            "price": 300,
-            "details": "Filete de Pollo salteado con curry rojo y arroz.",
-            "img": "/src/assets/padTailandes.png",
-            "state": true
+          "id": "9",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
         }
-    ],
-    "users": [
+      ]
+    },
+    {
+      "id": "2",
+      "user": "Andres Miguel",
+      "date": "09/05/24",
+      "state": "Entregada",
+      "products": [
         {
-            "id": "1",
-            "name": "Juan Lopez",
-            "email": "juanilopezz@gmail.com",
-            "profile": 300,
-            "password": "Filete de Pollo salteado con curry rojo y arroz.",
-            "state": true
+          "id": "7",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
         },
         {
-            "id": "2",
-            "name": "Marcos Juares",
-            "email": "marqjuarezg@gmail.com",
-            "profile": 300,
-            "password": "Filete de Pollo salteado con curry rojo y arroz.",
-            "state": true
+          "id": "8",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
         },
         {
-            "id": "3",
-            "name": "Miguel Marquez",
-            "email": "mmarquez2@gmail.com",
-            "profile": 300,
-            "password": "Filete de Pollo salteado con curry rojo y arroz.",
-            "state": true
-        },
-        {
-            "id": "4",
-            "name": "Andres Miguel",
-            "email": "andrumiguel07@gmail.com",
-            "profile": 300,
-            "password": "Filete de Pollo salteado con curry rojo y arroz.",
-            "state": true
-        },
-        {
-            "id": "5",
-            "name": "Andres Miguel",
-            "email": "andrumiguel07@gmail.com",
-            "profile": 300,
-            "password": "Filete de Pollo salteado con curry rojo y arroz.",
-            "state": true
-        },
-        {
-            "id": "6",
-            "name": "Andres Miguel",
-            "email": "andrumiguel07@gmail.com",
-            "profile": 300,
-            "password": "Filete de Pollo salteado con curry rojo y arroz.",
-            "state": true
-        },
-        {
-            "id": "7",
-            "name": "Andres Miguel",
-            "email": "andrumiguel07@gmail.com",
-            "profile": 300,
-            "password": "Filete de Pollo salteado con curry rojo y arroz.",
-            "state": true
+          "id": "9",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
         }
-    ],
-    "orders": [
+      ]
+    },
+    {
+      "id": "3",
+      "user": "Andres Miguel",
+      "date": "09/05/24",
+      "state": "Entregada",
+      "products": [
         {
-            "id": "1",
-            "user": "Andres Miguel",
-            "date": "09/05/24",
-            "state": "Pendiente",
-            "products": [
-                {
-                    "id": "7",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                },
-                {
-                    "id": "8",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                },
-                {
-                    "id": "9",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                }
-            ]
+          "id": "7",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
         },
         {
-            "id": "2",
-            "user": "Andres Miguel",
-            "date": "09/05/24",
-            "state": "Entregada",
-            "products": [
-                {
-                    "id": "7",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                },
-                {
-                    "id": "8",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                },
-                {
-                    "id": "9",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                }
-            ]
+          "id": "8",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
         },
         {
-            "id": "3",
-            "user": "Andres Miguel",
-            "date": "09/05/24",
-            "state": "Entregada",
-            "products": [
-                {
-                    "id": "7",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                },
-                {
-                    "id": "8",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                },
-                {
-                    "id": "9",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                }
-            ]
-        },
-        {
-            "id": "4",
-            "user": "Andres Miguel",
-            "date": "09/05/24",
-            "state": "Pendiente",
-            "products": [
-                {
-                    "id": "7",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                },
-                {
-                    "id": "8",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                },
-                {
-                    "id": "9",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                }
-            ]
-        },
-        {
-            "id": "5",
-            "user": "Andres Miguel",
-            "date": "09/05/24",
-            "state": "Pendiente",
-            "products": [
-                {
-                    "id": "7",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                },
-                {
-                    "id": "8",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                },
-                {
-                    "id": "9",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                }
-            ]
-        },
-        {
-            "id": "6",
-            "user": "Andres Miguel",
-            "date": "09/05/24",
-            "state": "Pendiente",
-            "products": [
-                {
-                    "id": "7",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                },
-                {
-                    "id": "8",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                },
-                {
-                    "id": "9",
-                    "name": "PAD DE VEGETALES SALTEADOS",
-                    "price": 300,
-                    "details": "Filete de Pollo salteado con curry rojo y arroz.",
-                    "img": "/src/assets/padTailandes.png",
-                    "state": true
-                }
-            ]
+          "id": "9",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
         }
-    ]
+      ]
+    },
+    {
+      "id": "4",
+      "user": "Andres Miguel",
+      "date": "09/05/24",
+      "state": "Pendiente",
+      "products": [
+        {
+          "id": "7",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
+        },
+        {
+          "id": "8",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
+        },
+        {
+          "id": "9",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "user": "Andres Miguel",
+      "date": "09/05/24",
+      "state": "Pendiente",
+      "products": [
+        {
+          "id": "7",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
+        },
+        {
+          "id": "8",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
+        },
+        {
+          "id": "9",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "user": "Andres Miguel",
+      "date": "09/05/24",
+      "state": "Pendiente",
+      "products": [
+        {
+          "id": "7",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
+        },
+        {
+          "id": "8",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
+        },
+        {
+          "id": "9",
+          "name": "PAD DE VEGETALES SALTEADOS",
+          "price": 300,
+          "details": "Filete de Pollo salteado con curry rojo y arroz.",
+          "img": "/src/assets/padTailandes.png",
+          "state": true
+        }
+      ]
+    }
+  ]
 }
