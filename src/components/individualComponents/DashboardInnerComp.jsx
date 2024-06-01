@@ -60,6 +60,7 @@ const DashboardInnerComp = ({
         return (
             <section className="dashboardAdmin">
                 <ProductsDashboard
+                    dashboard={dashboard}
                     productsArray={productsArray}
                 ></ProductsDashboard>
             </section>
@@ -68,21 +69,25 @@ const DashboardInnerComp = ({
     if (creating) {
         return (
             <section className="dashboardAdmin">
-                <CreateEditDashboard></CreateEditDashboard>;
+                <CreateEditDashboard creating={creating}></CreateEditDashboard>;
             </section>
         );
     }
     if (editing) {
         return (
             <section className="dashboardAdmin">
-                <CreateEditDashboard></CreateEditDashboard>;
+                <CreateEditDashboard editing={editing}></CreateEditDashboard>;
             </section>
         );
     }
     if (manageUsers) {
         return (
             <section className="dashboardAdmin">
-                <UsersDashboard usersArray={usersArray}></UsersDashboard>;
+                <UsersDashboard
+                    manageUsers={manageUsers}
+                    usersArray={usersArray}
+                ></UsersDashboard>
+                ;
             </section>
         );
     }

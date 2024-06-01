@@ -1,14 +1,15 @@
 import "../../css/cssComponents/createEditDashboard.css";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import thumb from "../../assets/thumb.svg";
 import { validateProdName } from "../../helpers/productValidations.js";
 import { validateProdPrice } from "../../helpers/productValidations.js";
 import { validateProdDesc } from "../../helpers/productValidations.js";
 import { validateProdUrl } from "../../helpers/productValidations.js";
-import { newProduct } from "../../helpers/queries.js";
+import { getProduct, newProduct } from "../../helpers/queries.js";
 
-const CreateEditDashboard = ({ creating, editing }) => {
+const CreateEditDashboard = ({ editing }) => {
     const [product, setProduct] = useState({});
     const [productName, setProductName] = useState("");
     const [productPrice, setProductPrice] = useState("");
@@ -40,11 +41,26 @@ const CreateEditDashboard = ({ creating, editing }) => {
         }
     };
 
-    const handleReset = e => {
-        console.log(e);
-    };
-
-    /* update product on change (must delete this)*/
+    /* Load product on Mouning */
+    if (editing) {
+        useEffect(() => {
+            loadProduct();
+        }, []);
+        const { id } = useParams();
+        const loadProduct = async () => {
+            const response = await getProduct(id);
+            if (response.status === 200) {
+                const data = await response.json();
+                setProductName(data.name);
+                setProductPrice(data.price);
+                setProductDescription(data.details);
+                setProductUrl(data.img);
+            } else {
+                /* Put a nice error message for user */
+            }
+        };
+    }
+    /* update product on change */
     useEffect(() => {
         if (
             productName &&
@@ -176,9 +192,6 @@ const CreateEditDashboard = ({ creating, editing }) => {
                     className="createEditSubmit"
                     type="submit"
                     onClick={e => handleSubmit(e)}
-                    onSubmit={e => {
-                        handleReset(e);
-                    }}
                 >
                     + Agregar producto
                 </button>
