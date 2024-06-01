@@ -58,8 +58,28 @@ function App() {
                         element={<PaginaCarrito></PaginaCarrito>}
                     ></Route>
                     <Route
-                        path="/admin/dashboard"
-                        element={<DashboardAdmin></DashboardAdmin>}
+                        path="/admin/products"
+                        element={
+                            <DashboardAdmin dashboard={true}></DashboardAdmin>
+                        }
+                    ></Route>
+                    <Route
+                        path="/admin/createProduct"
+                        element={
+                            <DashboardAdmin creating={true}></DashboardAdmin>
+                        }
+                    ></Route>
+                    <Route
+                        path="/admin/editingProduct"
+                        element={
+                            <DashboardAdmin editing={true}></DashboardAdmin>
+                        }
+                    ></Route>
+                    <Route
+                        path="/admin/manageUsers"
+                        element={
+                            <DashboardAdmin manageUsers={true}></DashboardAdmin>
+                        }
                     ></Route>
                     <Route
                         path="/login"
