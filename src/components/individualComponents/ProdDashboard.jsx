@@ -2,9 +2,10 @@ import "../../css/cssComponents/prodDashboard.css";
 import edit from "../../assets/editProducts.svg";
 import deleteImg from "../../assets/delete.svg";
 import { deleteProduct } from "../../helpers/queries";
+import { Link } from "react-router-dom";
 
 const ProductsDashboard = ({ productsArray }) => {
-    const handleClick = id => {
+    const handleDeletion = id => {
         deleteProduct(id);
     };
 
@@ -27,14 +28,29 @@ const ProductsDashboard = ({ productsArray }) => {
                             <td>$ {product.price}</td>
                             <td>{product.details}</td>
                             <td>
-                                <img src={product.img} alt={product.name} />
+                                <img
+                                    className="productImg"
+                                    src={product.img}
+                                    alt={product.name}
+                                />
                             </td>
                             <td className="edit">
-                                <button>
-                                    <img src={edit} title="Editar Producto" />
-                                </button>
-                                <button onClick={() => handleClick(product.id)}>
+                                <Link
+                                    className="itemBtn"
+                                    to={"/admin/editingProduct/" + product.id}
+                                >
                                     <img
+                                        className="manageImg"
+                                        src={edit}
+                                        title="Editar Producto"
+                                    />
+                                </Link>
+                                <button
+                                    className="itemBtn"
+                                    onClick={() => handleDeletion(product.id)}
+                                >
+                                    <img
+                                        className="manageImg"
                                         src={deleteImg}
                                         title="Eliminar Producto"
                                     />

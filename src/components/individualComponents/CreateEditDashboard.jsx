@@ -8,7 +8,7 @@ import { validateProdDesc } from "../../helpers/productValidations.js";
 import { validateProdUrl } from "../../helpers/productValidations.js";
 import { newProduct } from "../../helpers/queries.js";
 
-const CreateEditDashboard = () => {
+const CreateEditDashboard = ({ creating, editing }) => {
     const [product, setProduct] = useState({});
     const [productName, setProductName] = useState("");
     const [productPrice, setProductPrice] = useState("");

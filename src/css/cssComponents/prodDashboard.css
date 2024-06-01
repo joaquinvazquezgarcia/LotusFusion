@@ -23,22 +23,29 @@
     padding: 0.5rem 1rem;
     height: 100px !important;
 }
-.dashboardTable .tableItem img {
+.dashboardTable .productImg {
     height: 6rem;
     width: 100%;
     object-fit: contain;
     aspect-ratio: 1/1;
 }
 
-.dashboardTable button {
-    background-color: transparent;
-    border: none;
-    height: 2.5rem;
-    width: 50%;
-    aspect-ratio: 1 / 1;
+.dashboardTable .edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.dashboardTable button img {
+.dashboardTable .itemBtn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0.3rem;
+    height: 35px;
+    aspect-ratio: 1/1;
+}
+
+.manageImg {
     height: 100%;
     object-fit: contain;
 }

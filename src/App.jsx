@@ -70,7 +70,7 @@ function App() {
                         }
                     ></Route>
                     <Route
-                        path="/admin/editingProduct"
+                        path="/admin/editingProduct/:id"
                         element={
                             <DashboardAdmin editing={true}></DashboardAdmin>
                         }
