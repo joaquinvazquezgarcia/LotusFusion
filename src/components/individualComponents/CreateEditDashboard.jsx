@@ -1,15 +1,20 @@
 import "../../css/cssComponents/createEditDashboard.css";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import thumb from "../../assets/thumb.svg";
 import { validateProdName } from "../../helpers/productValidations.js";
 import { validateProdPrice } from "../../helpers/productValidations.js";
 import { validateProdDesc } from "../../helpers/productValidations.js";
 import { validateProdUrl } from "../../helpers/productValidations.js";
-import { getProduct, newProduct } from "../../helpers/queries.js";
+import {
+    deleteProduct,
+    getProduct,
+    newProduct,
+} from "../../helpers/queries.js";
 
 const CreateEditDashboard = ({ editing }) => {
+    const [productId, setProductId] = useState();
     const [product, setProduct] = useState({});
     const [productName, setProductName] = useState("");
     const [productPrice, setProductPrice] = useState("");
@@ -22,6 +27,7 @@ const CreateEditDashboard = ({ editing }) => {
     const [productDescriptionErr, setProductDescriptionErr] = useState("");
     const [productUrlErr, setProductUrlErr] = useState("");
     const [productStockErr, setProductStockErr] = useState("");
+    const navigation = useNavigate();
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -31,6 +37,9 @@ const CreateEditDashboard = ({ editing }) => {
             validateProdDesc(productDescription, setProductDescriptionErr) &&
             validateProdUrl(productUrl, setProductUrlErr)
         ) {
+            if (editing) {
+                deleteProduct(productId);
+            }
             setProduct({
                 name: productName,
                 price: productPrice,
@@ -40,27 +49,6 @@ const CreateEditDashboard = ({ editing }) => {
             });
         }
     };
-
-    /* Load product on Mouning */
-    if (editing) {
-        useEffect(() => {
-            loadProduct();
-        }, []);
-        const { id } = useParams();
-        const loadProduct = async () => {
-            const response = await getProduct(id);
-            if (response.status === 200) {
-                const data = await response.json();
-                setProductName(data.name);
-                setProductPrice(data.price);
-                setProductDescription(data.details);
-                setProductUrl(data.img);
-            } else {
-                /* Put a nice error message for user */
-            }
-        };
-    }
-    /* update product on change */
     useEffect(() => {
         if (
             productName &&
@@ -75,8 +63,29 @@ const CreateEditDashboard = ({ editing }) => {
             setProductPrice("");
             setProductDescription("");
             setProductUrl("");
+            /* navigation("/admin/products"); */
         }
     }, [product]);
+
+    if (editing) {
+        useEffect(() => {
+            loadProduct();
+        }, []);
+        const { id } = useParams();
+        const loadProduct = async () => {
+            const response = await getProduct(id);
+            if (response.status === 200) {
+                const data = await response.json();
+                setProductName(data.name);
+                setProductPrice(data.price);
+                setProductDescription(data.details);
+                setProductUrl(data.img);
+                setProductId(data.id);
+            } else {
+                /* Put a nice error message for user */
+            }
+        };
+    }
 
     return (
         <section className="createEditSection">
@@ -98,7 +107,7 @@ const CreateEditDashboard = ({ editing }) => {
                     placeholder="Ej: PAD TAILANDES"
                     onChange={e => {
                         validateProdName(e.target.value, setProductNameErr);
-                        setProductName(e.target.value);
+                        setProductName(e.target.value.toUpperCase());
                     }}
                 />
                 <p className="productInputAlert">{productNameErr}</p>
@@ -193,7 +202,7 @@ const CreateEditDashboard = ({ editing }) => {
                     type="submit"
                     onClick={e => handleSubmit(e)}
                 >
-                    + Agregar producto
+                    {!editing ? "+ Agregar producto" : "Editar producto"}
                 </button>
             </form>
         </section>
