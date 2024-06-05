@@ -5,6 +5,7 @@ import Home from "./components/pages/Home.jsx";
 import ProductDetails from "./components/pages/Details.jsx";
 import PaginaCarrito from "./components/pages/Cart.jsx";
 import LoginRegister from "./components/pages/LoginRegister.jsx";
+import DashboardAdmin from "./components/pages/DashboardAdmin.jsx";
 
 function App() {
     const handleCart = event => {
@@ -55,6 +56,30 @@ function App() {
                     <Route
                         path="/cart"
                         element={<PaginaCarrito></PaginaCarrito>}
+                    ></Route>
+                    <Route
+                        path="/admin/products"
+                        element={
+                            <DashboardAdmin dashboard={true}></DashboardAdmin>
+                        }
+                    ></Route>
+                    <Route
+                        path="/admin/createProduct"
+                        element={
+                            <DashboardAdmin creating={true}></DashboardAdmin>
+                        }
+                    ></Route>
+                    <Route
+                        path="/admin/editingProduct/:id"
+                        element={
+                            <DashboardAdmin editing={true}></DashboardAdmin>
+                        }
+                    ></Route>
+                    <Route
+                        path="/admin/manageUsers"
+                        element={
+                            <DashboardAdmin manageUsers={true}></DashboardAdmin>
+                        }
                     ></Route>
                     <Route
                         path="/login"

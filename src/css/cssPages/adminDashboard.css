@@ -1,0 +1,105 @@
+.pagDashboardAdmin {
+    min-height: 100vh;
+    background: linear-gradient(
+        to top right,
+        #363636,
+        #141414 30%,
+        #141414 45%,
+        #000
+    );
+    padding-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboardSectionContainer {
+    background-color: #484848;
+    border: 2px solid #fff;
+    width: 80%;
+    display: flex;
+    padding: 4rem 2rem;
+}
+
+.adminActionsSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 2rem 0 0;
+    max-width: 25%;
+    top: 0;
+}
+
+.adminActionBtn {
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    margin: 0.5rem 1rem;
+    font-weight: 300;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    text-align: start;
+}
+
+.adminActionBtn:hover {
+    background-color: #606060;
+}
+
+.adminActionBtn:active {
+    background-color: #555;
+}
+
+.adminActionBtn img {
+    margin-right: 1rem;
+    height: 100%;
+    max-height: 2.5rem;
+    object-fit: cover;
+}
+
+.logoutAdmin {
+    background-color: rgb(75, 59, 59);
+    margin-top: auto;
+}
+.logoutAdmin:hover {
+    background-color: rgb(107, 63, 63);
+    margin-top: auto;
+}
+.logoutAdmin:active {
+    background-color: rgb(91, 54, 54);
+    margin-top: auto;
+}
+
+/* ------- */
+
+.dashboardAdmin {
+    color: #fff;
+    flex-grow: 1;
+    display: flex;
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+/* ------- */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #252525;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

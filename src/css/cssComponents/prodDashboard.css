@@ -1,0 +1,58 @@
+.available {
+    color: rgb(114, 219, 135);
+}
+.unavailable {
+    color: rgb(252, 24, 24);
+}
+
+.dashboardTable {
+    flex-grow: 1;
+    border-radius: 5px 0 0 5px;
+    border: 2px solid #999;
+}
+
+.dashboardTable .head {
+    padding: 2rem 0;
+}
+
+.dashboardTable .head th {
+    padding: 2rem 0;
+    position: sticky;
+    top: 0%;
+    background-color: #4f4f4f;
+}
+
+.dashboardTable .tableItem {
+    background-color: #ffffff19;
+}
+
+.productos .tableItem td {
+    padding: 0.5rem 1rem;
+    height: 100px !important;
+}
+.dashboardTable .productImg {
+    height: 6rem;
+    width: 100%;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+}
+
+.dashboardTable .edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboardTable .itemBtn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0.3rem;
+    height: 35px;
+    aspect-ratio: 1/1;
+}
+
+.manageImg {
+    height: 100%;
+    object-fit: contain;
+}

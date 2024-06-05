@@ -139,7 +139,7 @@ const Home = ({ handleCart }) => {
                 <h3 className="homeMainHeader">Nuestro menú</h3>
                 <h2 className="homeMainTitle">PLATOS POPULARES</h2>
                 {productsArray.length < 3 ? (
-                    "Desafortunadamente no se puede mostrar el menú en este momento, por favor regrese mas tarde."
+                    "Desafortunadamente no se puede mostrar el menú en este momento, por favor intente recargar la página, o regrese mas tarde."
                 ) : (
                     <>
                         <div
