@@ -17,6 +17,7 @@ const ProductsDashboard = ({ productsArray }) => {
                     <th scope="col">PRECIO</th>
                     <th scope="col">DESCRIPCIÓN</th>
                     <th scope="col">{"IMAGEN (URL)"}</th>
+                    <th scope="col">ESTADO</th>
                     <th scope="col">ACCIONES</th>
                 </tr>
             </thead>
@@ -33,6 +34,15 @@ const ProductsDashboard = ({ productsArray }) => {
                                     src={product.img}
                                     alt={product.name}
                                 />
+                            </td>
+                            <td
+                                className={
+                                    product.state ? "available" : "unavailable"
+                                }
+                            >
+                                {product.state == true
+                                    ? "Disponible"
+                                    : "No disponible"}
                             </td>
                             <td className="edit">
                                 <Link

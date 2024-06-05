@@ -73,3 +73,15 @@ export const validateProdUrl = (value, setErrorMsg) => {
     setErrorMsg("");
     return true;
 };
+
+export const validateProdStock = (value, setErrorMsg) => {
+    if (value == undefined)
+        return setErrorAndReturnFalse(setErrorMsg, "Este campo es obligatorio");
+    if (value != false && value != true)
+        return setErrorAndReturnFalse(
+            setErrorMsg,
+            "El estado del producto es incorrecto, por favor recargue la página."
+        );
+    setErrorMsg("");
+    return true;
+};

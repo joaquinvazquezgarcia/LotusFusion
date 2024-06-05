@@ -1,34 +1,42 @@
 {
   "products": [
     {
-      "id": "1",
+      "id": "6fe1",
       "name": "POLLO AL CURRY ROJO",
       "price": 5600,
       "details": "Filete de Pollo salteado con curry rojo y arroz.",
       "img": "/src/assets/polloAlCurry.png",
+      "state": false
+    },
+    {
+      "id": "0fec",
+      "name": "POLLO FRITO CON SESAMO ",
+      "price": "6000",
+      "details": "Filete de pollo frito con sesamo y con salsa agridulce y arroz.",
+      "img": "https://yumyum.se/wp-content/uploads/2021/12/6-sesamfriterad-kyckling-webb.png",
       "state": true
     },
     {
-      "id": "2150",
-      "name": "TERMINATIOR",
-      "price": "123",
-      "details": "terreneitor la maquina mas rapida que ha existido",
-      "img": "https://www.foodmanufacture.co.uk/var/wrbm_gb_food_pharma/storage/images/3/6/8/4/634863-8-eng-GB/Eat-less-meat-or-else-the-Terminator.jpg",
+      "id": "903d",
+      "name": "POLLO AL CURRY VERDE",
+      "price": "5700",
+      "details": "Filete de pollo salteado con curry verde y arroz.",
+      "img": "https://yumyum.se/wp-content/uploads/2021/12/5-kyckling-gron-curry-webb.png",
+      "state": false
+    },
+    {
+      "id": "bf4b",
+      "name": "POLLO AL CURRY",
+      "price": "5000",
+      "details": "Asiudhfiasdhfisahdfisudfiusadhf",
+      "img": "https://yumyum.se/wp-content/uploads/2021/12/3-kyckling-annanas-webb.png",
       "state": true
     },
     {
-      "id": "e614",
-      "name": "POLLO AL CURRY ROJO",
-      "price": 5600,
-      "details": "Filete de Pollo salteado con curry rojo y arroz.",
-      "img": "/src/assets/polloAlCurry.png",
-      "state": true
-    },
-    {
-      "id": "adfc",
-      "name": "COCA CON PAN",
+      "id": "6d8c",
+      "name": "SANGUCHITO DE FIAMBRE ",
       "price": "1200",
-      "details": "La comida de los albañiles mas duros de la zona",
+      "details": "Sanguchito de fiambre con coca",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThZT3R43TsUuK5XfNwnjuZnaDOTBOEoworCg&s",
       "state": true
     }

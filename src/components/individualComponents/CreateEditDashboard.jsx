@@ -7,6 +7,7 @@ import { validateProdName } from "../../helpers/productValidations.js";
 import { validateProdPrice } from "../../helpers/productValidations.js";
 import { validateProdDesc } from "../../helpers/productValidations.js";
 import { validateProdUrl } from "../../helpers/productValidations.js";
+import { validateProdStock } from "../../helpers/productValidations.js";
 import {
     deleteProduct,
     getProduct,
@@ -35,7 +36,8 @@ const CreateEditDashboard = ({ editing }) => {
             validateProdName(productName, setProductNameErr) &&
             validateProdPrice(productPrice, setProductPriceErr) &&
             validateProdDesc(productDescription, setProductDescriptionErr) &&
-            validateProdUrl(productUrl, setProductUrlErr)
+            validateProdUrl(productUrl, setProductUrlErr) &&
+            validateProdStock(productStock, setProductStockErr)
         ) {
             if (editing) {
                 deleteProduct(productId);
@@ -43,7 +45,9 @@ const CreateEditDashboard = ({ editing }) => {
             setProduct({
                 name: productName,
                 price: productPrice,
-                details: productDescription,
+                details:
+                    productDescription[0].toUpperCase() +
+                    productDescription.slice(1).toLowerCase(),
                 img: productUrl,
                 state: productStock,
             });
@@ -55,7 +59,7 @@ const CreateEditDashboard = ({ editing }) => {
             productPrice &&
             productDescription &&
             productUrl &&
-            productStock
+            productStock != undefined
         ) {
             newProduct(product);
             /* Clear form*/
@@ -63,29 +67,31 @@ const CreateEditDashboard = ({ editing }) => {
             setProductPrice("");
             setProductDescription("");
             setProductUrl("");
-            /* navigation("/admin/products"); */
+            navigation("/admin/products");
         }
     }, [product]);
 
-    if (editing) {
-        useEffect(() => {
+    useEffect(() => {
+        if (editing) {
             loadProduct();
-        }, []);
-        const { id } = useParams();
-        const loadProduct = async () => {
-            const response = await getProduct(id);
-            if (response.status === 200) {
-                const data = await response.json();
-                setProductName(data.name);
-                setProductPrice(data.price);
-                setProductDescription(data.details);
-                setProductUrl(data.img);
-                setProductId(data.id);
-            } else {
-                /* Put a nice error message for user */
-            }
-        };
-    }
+        }
+    }, []);
+
+    const { id } = useParams();
+    const loadProduct = async () => {
+        const response = await getProduct(id);
+        if (response.status === 200) {
+            const data = await response.json();
+            setProductName(data.name);
+            setProductPrice(data.price);
+            setProductDescription(data.details);
+            setProductUrl(data.img);
+            setProductStock(data.state);
+            setProductId(data.id);
+        } else {
+            /* Put a nice error message for user */
+        }
+    };
 
     return (
         <section className="createEditSection">
@@ -168,7 +174,7 @@ const CreateEditDashboard = ({ editing }) => {
                     <label className="switch">
                         <input
                             type="checkbox"
-                            defaultChecked
+                            checked={productStock == true ? "checked" : false}
                             id="createProdStock"
                             onChange={e => {
                                 setProductStock(e.target.checked);
@@ -184,14 +190,12 @@ const CreateEditDashboard = ({ editing }) => {
                             <img
                                 src={thumb}
                                 className={
-                                    productStockState
-                                        ? "thumb up"
-                                        : "thumb down"
+                                    productStock ? "thumb up" : "thumb down"
                                 }
                                 alt="pulgar"
                             />
                         </span>
-                        {productStockState
+                        {productStock == true
                             ? "El producto se encuentra disponible."
                             : "El producto no se encuentra disponible."}
                     </p>
