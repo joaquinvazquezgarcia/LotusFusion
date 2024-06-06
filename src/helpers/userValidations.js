@@ -47,3 +47,45 @@ export const validateUserName = (value, setErrMsg) => {
     setErrMsg("");
     return true;
 };
+
+export const validatePassword = (value, setErrMsg) => {
+    if (value.length < 1) {
+        setErrAndReturnFalse(
+            setErrMsg,
+            "La contraseña es un campo obligatorio."
+        );
+        return false;
+    }
+    if (value.length < 5) {
+        setErrAndReturnFalse(
+            setErrMsg,
+            "La contraseña debe poseer al menos 5 caracteres"
+        );
+        return false;
+    }
+    if (value.length > 100) {
+        setErrAndReturnFalse(
+            setErrMsg,
+            "La contraseña no puede contener mas de 100 caracteres."
+        );
+        return false;
+    }
+    setErrMsg("");
+    return true;
+};
+
+export const validateRepeatPassword = (original, value, setErrMsg) => {
+    if (value.length < 1) {
+        setErrAndReturnFalse(
+            setErrMsg,
+            "Debe repetir su contraseña para poder continuar."
+        );
+        return false;
+    }
+    if (original !== value) {
+        setErrAndReturnFalse(setErrMsg, "Las contraseñas no coinciden");
+        return false;
+    }
+    setErrMsg("");
+    return true;
+};

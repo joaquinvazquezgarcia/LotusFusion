@@ -2,6 +2,8 @@ import "../../css/cssPages/loginRegister.css";
 import loginImg from "../../assets/loginImg.jpg";
 import { useState } from "react";
 import {
+    validatePassword,
+    validateRepeatPassword,
     validateUserEmail,
     validateUserName,
 } from "../../helpers/userValidations.js";
@@ -23,7 +25,8 @@ const LoginRegister = ({ registering, setRegistering }) => {
         e.preventDefault();
         if (
             validateUserEmail(email, setEmailErrMsg) &&
-            validateUserName(name, setNameErrMsg)
+            validateUserName(name, setNameErrMsg) &&
+            validatePassword(password, setPasswordErrMsg)
         ) {
             console.log(email);
         }
@@ -76,7 +79,11 @@ const LoginRegister = ({ registering, setRegistering }) => {
                                 type="password"
                                 placeholder="Contraseña"
                                 onChange={e => {
-                                    setEmail(e.target.value);
+                                    validatePassword(
+                                        e.target.value,
+                                        setPasswordErrMsg
+                                    );
+                                    setPassword(e.target.value);
                                 }}
                             />
                             <p className="productInputAlert">
@@ -90,7 +97,11 @@ const LoginRegister = ({ registering, setRegistering }) => {
                                 type="password"
                                 placeholder="Contraseña"
                                 onChange={e => {
-                                    setEmail(e.target.value);
+                                    validateRepeatPassword(
+                                        password,
+                                        e.target.value,
+                                        setRepPasswordErrMsg
+                                    );
                                 }}
                             />
                             <p className="productInputAlert">
