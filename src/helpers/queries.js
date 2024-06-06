@@ -67,3 +67,30 @@ export const getOrders = async () => {
         console.log(error);
     }
 };
+
+/* ----------------- USER MANAGEMENT ----------------- */
+const userAdmin = {
+    email: "admin@admin.com",
+    password: "123aA$",
+};
+
+export const login = user => {
+    if (
+        user.email === userAdmin.email &&
+        user.password === userAdmin.password
+    ) {
+        sessionStorage.setItem("login", JSON.stringify(user.email));
+        return true;
+    } else {
+        //codigo para logueo fallido
+        console.log("codigo para logueo fallido");
+        return false;
+    }
+    /* if (
+        user.email === restoDeUsuarios.email &&
+        user.password === restoDeUsuarios.password
+    ) {
+        sessionStorage.setItem('login', JSON.stringify(user.email);
+        return true;
+    } */
+};
