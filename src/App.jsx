@@ -5,7 +5,9 @@ import Home from "./components/pages/Home.jsx";
 import ProductDetails from "./components/pages/Details.jsx";
 import PaginaCarrito from "./components/pages/Cart.jsx";
 import LoginRegister from "./components/pages/LoginRegister.jsx";
-import DashboardAdmin from "./components/pages/DashboardAdmin.jsx";
+
+import { ProtectedRoutes } from "./routes/ProtectedRoutes.jsx";
+import { AdminRoutes } from "./routes/AdminRoutes.jsx";
 
 function App() {
     const handleCart = event => {
@@ -58,27 +60,12 @@ function App() {
                         element={<PaginaCarrito></PaginaCarrito>}
                     ></Route>
                     <Route
-                        path="/admin/products"
+                        exact
+                        path="/admin/*"
                         element={
-                            <DashboardAdmin dashboard={true}></DashboardAdmin>
-                        }
-                    ></Route>
-                    <Route
-                        path="/admin/createProduct"
-                        element={
-                            <DashboardAdmin creating={true}></DashboardAdmin>
-                        }
-                    ></Route>
-                    <Route
-                        path="/admin/editingProduct/:id"
-                        element={
-                            <DashboardAdmin editing={true}></DashboardAdmin>
-                        }
-                    ></Route>
-                    <Route
-                        path="/admin/manageUsers"
-                        element={
-                            <DashboardAdmin manageUsers={true}></DashboardAdmin>
+                            <ProtectedRoutes>
+                                <AdminRoutes />
+                            </ProtectedRoutes>
                         }
                     ></Route>
                     <Route

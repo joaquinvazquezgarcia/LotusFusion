@@ -79,7 +79,7 @@ export const login = (user, setLoginErrMsg) => {
         user.email === userAdmin.email &&
         user.password === userAdmin.password
     ) {
-        sessionStorage.setItem("login", JSON.stringify(user.email));
+        sessionStorage.setItem("admin", JSON.stringify(user.email));
         setLoginErrMsg("");
         return true;
     } else {
