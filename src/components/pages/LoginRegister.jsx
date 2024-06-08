@@ -1,22 +1,32 @@
 import "../../css/cssPages/loginRegister.css";
 import loginImg from "../../assets/loginImg.jpg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
     validatePassword,
     validateRepeatPassword,
     validateUserEmail,
     validateUserName,
 } from "../../helpers/userValidations.js";
+import { login } from "../../helpers/queries.js";
+import { useNavigate } from "react-router-dom";
 
 const LoginRegister = ({ registering, setRegistering }) => {
+    const navigation = useNavigate();
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
+    const [repeatPassword, setRepeatPassword] = useState("");
     const [emailErrMsg, setEmailErrMsg] = useState("");
     const [nameErrMsg, setNameErrMsg] = useState("");
     const [passwordErrMsg, setPasswordErrMsg] = useState("");
     const [repPasswordErrMsg, setRepPasswordErrMsg] = useState("");
+    /* for login */
+    const [loginUser, setLoginUser] = useState("");
+    const [loginEmail, setLoginEmail] = useState("");
+    const [loginPassword, setLoginPassword] = useState("");
+    const [loginErrMsg, setLoginErrMsg] = useState("");
 
+    /* for register */
     const handleRegistering = () => {
         registering ? setRegistering(false) : setRegistering(true);
     };
@@ -26,9 +36,27 @@ const LoginRegister = ({ registering, setRegistering }) => {
         if (
             validateUserEmail(email, setEmailErrMsg) &&
             validateUserName(name, setNameErrMsg) &&
-            validatePassword(password, setPasswordErrMsg)
+            validatePassword(password, setPasswordErrMsg) &&
+            validateRepeatPassword(
+                password,
+                repeatPassword,
+                setRepPasswordErrMsg
+            )
         ) {
             console.log(email);
+        }
+    };
+
+    /* For login */
+
+    useEffect(() => {
+        setLoginUser({ email: loginEmail, password: loginPassword });
+    }, [loginEmail, loginPassword]);
+
+    const handleLogin = e => {
+        e.preventDefault();
+        if (login(loginUser, setLoginErrMsg)) {
+            navigation("/admin/products");
         }
     };
 
@@ -102,6 +130,7 @@ const LoginRegister = ({ registering, setRegistering }) => {
                                         e.target.value,
                                         setRepPasswordErrMsg
                                     );
+                                    setRepeatPassword(e.target.value);
                                 }}
                             />
                             <p className="productInputAlert">
@@ -122,14 +151,21 @@ const LoginRegister = ({ registering, setRegistering }) => {
                                 id="loginEmail"
                                 type="text"
                                 placeholder="lotusfusion@example.com"
+                                onChange={e => setLoginEmail(e.target.value)}
                             />
                             <label htmlFor="loginPass">Contraseña</label>
                             <input
                                 id="loginPass"
                                 type="password"
                                 placeholder="Contraseña"
+                                onChange={e => setLoginPassword(e.target.value)}
                             />
-                            <button className="loginSubmitBtn" type="submit">
+                            <p className="productInputAlert">{loginErrMsg}</p>
+                            <button
+                                onClick={e => handleLogin(e)}
+                                className="loginSubmitBtn"
+                                type="submit"
+                            >
                                 Iniciar sesión
                             </button>
                         </form>

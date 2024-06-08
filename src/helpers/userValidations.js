@@ -49,6 +49,9 @@ export const validateUserName = (value, setErrMsg) => {
 };
 
 export const validatePassword = (value, setErrMsg) => {
+    const upperCase = /[A-Z]/g;
+    const lowerCase = /[a-z]/g;
+    const numbers = /[0-9]/g;
     if (value.length < 1) {
         setErrAndReturnFalse(
             setErrMsg,
@@ -59,7 +62,7 @@ export const validatePassword = (value, setErrMsg) => {
     if (value.length < 5) {
         setErrAndReturnFalse(
             setErrMsg,
-            "La contraseña debe poseer al menos 5 caracteres"
+            "La contraseña debe poseer al menos 8 caracteres"
         );
         return false;
     }
@@ -67,6 +70,27 @@ export const validatePassword = (value, setErrMsg) => {
         setErrAndReturnFalse(
             setErrMsg,
             "La contraseña no puede contener mas de 100 caracteres."
+        );
+        return false;
+    }
+    if (!upperCase.test(value)) {
+        setErrAndReturnFalse(
+            setErrMsg,
+            "La contraseña debe contener al menos una letra mayúscula."
+        );
+        return false;
+    }
+    if (!lowerCase.test(value)) {
+        setErrAndReturnFalse(
+            setErrMsg,
+            "La contraseña debe contener al menos una letra minúscula."
+        );
+        return false;
+    }
+    if (!numbers.test(value)) {
+        setErrAndReturnFalse(
+            setErrMsg,
+            "La contraseña debe contener al menos un número."
         );
         return false;
     }

@@ -74,16 +74,17 @@ const userAdmin = {
     password: "123aA$",
 };
 
-export const login = user => {
+export const login = (user, setLoginErrMsg) => {
     if (
         user.email === userAdmin.email &&
         user.password === userAdmin.password
     ) {
         sessionStorage.setItem("login", JSON.stringify(user.email));
+        setLoginErrMsg("");
         return true;
     } else {
         //codigo para logueo fallido
-        console.log("codigo para logueo fallido");
+        setLoginErrMsg("El email o la contraseña son incorrectos.");
         return false;
     }
     /* if (
