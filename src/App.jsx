@@ -6,6 +6,7 @@ import ProductDetails from "./components/pages/Details.jsx";
 import PaginaCarrito from "./components/pages/Cart.jsx";
 import LoginRegister from "./components/pages/LoginRegister.jsx";
 import DashboardAdmin from "./components/pages/DashboardAdmin.jsx";
+import { Header } from "./components/individualComponents/Header.jsx";
 
 function App() {
     const handleCart = event => {
@@ -39,6 +40,7 @@ function App() {
     return (
         <>
             <BrowserRouter>
+                <Header />
                 <Routes>
                     <Route
                         path="/"

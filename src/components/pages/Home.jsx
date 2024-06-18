@@ -61,7 +61,7 @@ const Home = ({ handleCart }) => {
 
     return (
         <main>
-            <section className="homeBanner">
+            <section className="homeBanner" id="home">
                 <div className="homeBannerTextContainer">
                     <h1 className="homeBannerTitle">
                         BIENVENIDOS A <br />
@@ -87,7 +87,7 @@ const Home = ({ handleCart }) => {
                     <div className="homeBannerImgOverlay"></div>
                 </div>
             </section>
-            <section className="homeInfo">
+            <section className="homeInfo" id="mainInfo">
                 <div className="homeInfoImgContainer">
                     <img src={homeAboutUsImg} alt="" className="homeInfoImg" />
                 </div>
