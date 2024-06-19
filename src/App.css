@@ -10,8 +10,14 @@ html {
 * {
     font-family: Bliss, Inter, system-ui, Avenir, Helvetica, Arial;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
+@font-face {
+    font-family: "Rochester";
+    src: url(./assets/font/Rochester-Regular.ttf);
+    font-weight: 500;
+}
 @font-face {
     font-family: "Bliss";
     src: url(./assets/font/BlissProExtraLight.otf);
