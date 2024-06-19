@@ -10,10 +10,14 @@ import { useState } from "react";
 export const Header = () => {
     const [userSelect, setUserSelect] = useState("");
     const [headerScroll, setHeaderScroll] = useState("");
+    const [headerHamb, setHeaderHamb] = useState("");
 
     window.onscroll = function () {
         setUserSelect("");
         window.scrollY > 0 ? setHeaderScroll(" white") : setHeaderScroll("");
+    };
+    const handleHamb = () => {
+        setHeaderHamb(headerHamb == "" ? " active" : "");
     };
 
     return (
@@ -54,6 +58,71 @@ export const Header = () => {
                         <button>Cerrar sesión</button>
                     </div>
                 </div>
+            </nav>
+            <button
+                className={"headerHamb " + headerHamb}
+                onClick={() => {
+                    handleHamb();
+                }}
+            >
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+            </button>
+            <nav className={"headerNavMobile" + headerHamb}>
+                <HashLink
+                    className="headerNavLink"
+                    to={"/#home"}
+                    onClick={() => {
+                        handleHamb();
+                    }}
+                >
+                    Inicio
+                </HashLink>
+                <HashLink
+                    className="headerNavLink"
+                    to={"/#mainMenu"}
+                    onClick={() => {
+                        handleHamb();
+                    }}
+                >
+                    Productos
+                </HashLink>
+                <HashLink
+                    className="headerNavLink"
+                    to={"/#mainInfo"}
+                    onClick={() => {
+                        handleHamb();
+                    }}
+                >
+                    Nosotros
+                </HashLink>
+                <Link
+                    className="headerNavLink"
+                    to={"/cart"}
+                    onClick={() => {
+                        handleHamb();
+                    }}
+                >
+                    Carrito
+                </Link>
+                <Link
+                    className="headerNavLink"
+                    to={"/#home"}
+                    onClick={() => {
+                        handleHamb();
+                    }}
+                >
+                    Mis pedidos
+                </Link>
+                <button
+                    className="headerNavLink"
+                    onClick={() => {
+                        handleHamb();
+                    }}
+                >
+                    Cerrar sesión
+                </button>
             </nav>
         </header>
     );

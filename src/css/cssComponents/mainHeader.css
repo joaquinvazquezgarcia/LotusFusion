@@ -39,6 +39,8 @@
 .headerNavLink {
     color: #fff;
     text-decoration: none;
+    background-color: transparent;
+    border: none;
     margin: 0 1rem;
     font-size: 1.5rem;
     font-weight: 200;
@@ -105,4 +107,164 @@
 }
 .headerUserDropDown button:hover {
     text-decoration: underline;
+}
+.headerHamb {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent;
+    border: none;
+    width: 1.8rem;
+    aspect-ratio: 1.1/1;
+    margin: auto 0;
+}
+.headerHamb .bar {
+    display: block;
+    background-color: #fff;
+    height: 4px;
+    border-radius: 3px;
+    width: 2rem;
+    transition: 0.2s;
+}
+.headerHamb.active .bar:nth-of-type(1) {
+    transform: rotate(45deg) translateY(0.7em) translateX(0.4em);
+}
+.headerHamb.active .bar:nth-of-type(2) {
+    display: none;
+}
+.headerHamb.active .bar:nth-of-type(3) {
+    transform: rotate(-45deg) translateY(-0.7em) translateX(0.4em);
+}
+.headerNavMobile {
+    position: absolute;
+    top: 100px;
+    display: none;
+    flex-direction: column;
+    width: 100vw;
+    left: -1000%;
+    padding: 3rem 5rem;
+    text-align: center;
+    background-color: #171312f4;
+    transition: 0.2s;
+}
+.headerNavMobile.active {
+    left: 0;
+}
+
+@media screen and (max-width: 300px) {
+    .mainHeader {
+        padding: 0 2rem;
+    }
+    .headerLogo {
+        height: 60%;
+    }
+    .headerName {
+        display: none;
+    }
+    .headerHamb {
+        display: flex;
+    }
+    .headerNav {
+        display: none;
+    }
+    .headerNavMobile {
+        display: flex;
+    }
+    .headerNavLink {
+        margin: 2rem 1rem;
+        font-size: 2rem;
+    }
+    .headerNavLink:hover {
+        text-decoration: underline 2px;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 380px) {
+    .mainHeader {
+        padding: 0 2rem;
+    }
+    .headerLogo {
+        height: 60%;
+    }
+    .headerName {
+        font-size: 2rem;
+    }
+    .headerHamb {
+        display: flex;
+    }
+    .headerNav {
+        display: none;
+    }
+    .headerNavMobile {
+        display: flex;
+    }
+    .headerNavLink {
+        margin: 2rem 1rem;
+        font-size: 2rem;
+    }
+    .headerNavLink:hover {
+        text-decoration: underline 2px;
+    }
+}
+
+@media screen and (min-width: 380px) and (max-width: 540px) {
+    .mainHeader {
+        padding: 0 2rem;
+    }
+    .headerLogo {
+        height: 60%;
+    }
+    .headerName {
+        font-size: 2.3rem;
+    }
+    .headerHamb {
+        display: flex;
+    }
+    .headerNav {
+        display: none;
+    }
+    .headerNavMobile {
+        display: flex;
+    }
+    .headerNavLink {
+        margin: 2rem 1rem;
+        font-size: 2rem;
+    }
+    .headerNavLink:hover {
+        text-decoration: underline 2px;
+    }
+}
+
+@media screen and (min-width: 540px) and (max-width: 992px) {
+    .mainHeader {
+        padding: 0 5rem 0 5rem;
+    }
+    .headerHamb {
+        display: flex;
+    }
+    .headerNav {
+        display: none;
+    }
+    .headerNavMobile {
+        display: flex;
+    }
+    .headerNavLink {
+        margin: 2rem 1rem;
+        font-size: 2rem;
+    }
+    .headerNavLink:hover {
+        text-decoration: underline 2px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1025px) {
+    .mainHeader {
+        padding: 0 5rem 0 5rem;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+    .mainHeader {
+        padding: 0 7rem 0 7rem;
+    }
 }
